@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> <!--noupdate="1"-->
+    <data>
+        <!--Download Report Assets -->
+        <template id="vna_reports_backend" inherit_id="web.assets_backend" active="True">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/hotel_management/static/src/js/action_manager_report_dl.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

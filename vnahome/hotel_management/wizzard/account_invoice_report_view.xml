@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="vna_view_account_invoice_report_pivot" model="ir.ui.view">
+            <field name="name">account.invoice.report.pivot</field>
+            <field name="model">account.invoice.report</field>
+            <field name="inherit_id" ref="account.view_account_invoice_report_pivot"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="replace">
+                </xpath>
+            </field>
+        </record>
+
+        <record id="vna_view_account_invoice_report_graph" model="ir.ui.view">
+            <field name="name">account.invoice.report.graph</field>
+            <field name="model">account.invoice.report</field>
+            <field name="inherit_id" ref="account.view_account_invoice_report_graph"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="replace">
+                </xpath>
+            </field>
+        </record>
+
+        <record id="vna_view_account_invoice_report_search" model="ir.ui.view">
+            <field name="name">vna_view_account_invoice_report_graph</field>
+            <field name="model">account.invoice.report</field>
+            <field name="inherit_id" ref="account.view_account_invoice_report_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="replace">
+                </xpath>
+                <xpath expr="//filter[@name='category_product']" position="replace">
+                </xpath>
+            </field>
+        </record>
+
+        <record id="vna_action_account_invoice_report_all" model="ir.actions.act_window">
+            <field name="name">Invoices Analysis</field>
+            <field name="res_model">account.invoice.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph,pivot</field>
+            <!--            <field name="context">{'search_default_current':1}</field>-->
+            <field name="search_view_id" ref="account.view_account_invoice_report_search"/>
+            <field name="help">From this report, you can have an overview of the amount invoiced to your customers. The search tool can also be used
+                to personalise your Invoices reports and so, match this analysis to your needs.
+            </field>
+        </record>
+
+        <menuitem name="Invoices" action="vna_action_account_invoice_report_all" id="account.menu_action_account_invoice_report_all"
+                  parent="account.account_reports_management_menu" sequence="1"/>
+
+    </data>
+</odoo>

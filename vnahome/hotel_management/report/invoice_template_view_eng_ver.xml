@@ -1,0 +1,698 @@
+<odoo>
+    <data>
+        <template id="report_invoice_eng">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                         style="height: 1122px;">
+                        <style type="text/css">
+                            .table1 {
+                            font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+                            font-size: 14px; border: 1px solid black; border-collapse: collapse;
+                            }
+
+                            .table2 {
+                            font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+                            font-size: 16px; border: 1px solid black; ; border-collapse: collapse;
+                            }
+                            table {width: 100%;}
+
+                            .table1 td {
+                            height: 10px;
+                            }
+                            .table2 td {
+                            height: 4mm;
+                            }
+                            .margin-right-td {margin-right: 0mm}
+                        </style>
+                        <t t-set="dump_space" t-value=" '     '.replace(' ',u'\xa0').encode('utf-8') "/>
+                        <t t-set="data" t-value="o._get_data()"/>
+                        <t t-set="lines" t-value="data['lines']"/>
+                        <t t-set="vals" t-value="data['vals']"/>
+                        <t t-set="taxes" t-value="data['taxes']"/>
+                        <t t-set="locale" t-value="data['locale']"/>
+                        <t t-set="data_report_dpi" t-value="70"/>
+<!--                        <div style="height: 560px;">-->
+<!--                            <div>-->
+<!--                                <table class="table2" cellspacing="0" border="1" cellpadding="0">-->
+<!--                                    <tr style="line-height: 2">-->
+<!--                                        <td style="width: 33%; border:1px solid black; border-collapse: collapse;vertical-align: top;margin:0px;"-->
+<!--                                            align="center"-->
+<!--                                            rowspan="3">-->
+<!--                                            <img t-if="res_company.logo" width="200px" height="70px"-->
+<!--                                                 style="vertical-align:top;margin:0px"-->
+<!--                                                 t-att-src="'data:image/png;base64,%s' % to_text(res_company.logo)"-->
+<!--                                            />-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 67%; border:1px solid black; border-collapse: collapse; font-size: 20px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            colspan="2" align="center">-->
+<!--                                            <span>House Rent Receipt</span>&amp;nbsp;-->
+<!--                                            <t t-if="o.date_invoice">-->
+<!--                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>-->
+<!--                                            </t>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+
+<!--                                    <tr style="line-height: 1.3">-->
+<!--                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            align="center">-->
+<!--                                            Month-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; "-->
+<!--                                            align="center">-->
+<!--                                            <t t-if="o.date_invoice">-->
+<!--                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>-->
+<!--                                            </t>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr style="line-height: 1.3">-->
+<!--                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            valign="middle" align="center" border="1">-->
+<!--                                            Room No-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                            align="center" border="1">-->
+<!--                                            <t t-if="o.room_id">-->
+<!--                                                <span style="font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                                      t-field="o.room_id.name"/>-->
+<!--                                            </t>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="width: 33%; border:1px solid black; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold; font-style: italic;"-->
+<!--                                            valign="middle" align="center" border="1">-->
+<!--                                            Phone Number-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            valign="center" align="left">-->
+<!--                                            Property Address-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                            align="center" border="1">-->
+<!--                                            <t t-if="o.room_id.categ_id">-->
+<!--                                                <span style="font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                                      t-field="o.room_id.categ_id.name"/>-->
+<!--                                            </t>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="width: 33%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                            valign="middle" align="center" border="1" rowspan="2">-->
+<!--                                            <span>084.388.3838-->
+<!--                                            </span>&amp;nbsp;-&amp;nbsp;-->
+<!--                                            <span>084.588.3838</span>-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            valign="middle" align="left">-->
+<!--                                            Tentant Information-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                            align="center" border="1">-->
+<!--                                            <t t-if="o.partner_id">-->
+<!--                                                <span style="font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                                      t-field="o.partner_id.name"/>-->
+<!--                                                <t t-if="o.partner_id.phone">-->
+<!--                                                    &amp;nbsp;-&amp;nbsp;-->
+<!--                                                    <span style="font-size: 16px; font-family: 'Times New Roman', Times, serif;"-->
+<!--                                                          t-field="o.partner_id.phone"/>-->
+<!--                                                </t>-->
+<!--                                                <t t-if="o.partner_id.mobile">&amp;nbsp;-&amp;nbsp;-->
+<!--                                                    <span style="font-size: 16px; font-family: 'Times New Roman', Times, serif;"-->
+<!--                                                          t-field="o.partner_id.mobile"/>-->
+<!--                                                </t>-->
+<!--                                            </t>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            valign="middle" align="left" border="1">-->
+<!--                                            Electric Meter First-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                            align="center" border="1">-->
+<!--                                            <t t-if="o.start_electricity_number">-->
+<!--                                                <span style="font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                                      t-esc="'{0:,.0f}'.format(o.start_electricity_number)"/>-->
+<!--                                            </t>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="width: 33%; border:1px solid black; border-collapse: collapse; font-size: 13px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            valign="middle" align="center">-->
+<!--                                            Receipt No:&amp;nbsp;-->
+<!--                                            <span style="font-size: 11px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                                  t-field="o.number"/>-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"-->
+<!--                                            valign="middle" align="left" border="1">-->
+<!--                                            Electric Meter Last-->
+<!--                                        </td>-->
+<!--                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                            align="center" border="1">-->
+<!--                                            <t t-if="o.end_electricity_number">-->
+<!--                                                <span style="font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"-->
+<!--                                                      t-esc="'{0:,.0f}'.format(o.end_electricity_number)"/>-->
+<!--                                            </t>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                            <br/>-->
+<!--                            <div>-->
+<!--                                <t t-set="sum_total" t-value="0"/>-->
+<!--                                &lt;!&ndash;                                <t t-set="sum_total" t-value="0"/>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                <t t-set="sum_total" t-value="0"/>&ndash;&gt;-->
+<!--                                <table class="table1" cellspacing="0" border="1" cellpadding="0">-->
+<!--                                    <thead>-->
+<!--                                        <tr>-->
+<!--                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"-->
+<!--                                                width="8%" align="center">No-->
+<!--                                            </th>-->
+<!--                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"-->
+<!--                                                width="25%" align="center">Description-->
+<!--                                            </th>-->
+<!--                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"-->
+<!--                                                width="14%" align="center">Unit Price-->
+<!--                                            </th>-->
+<!--                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"-->
+<!--                                                width="13%" align="center">Quantity-->
+<!--                                            </th>-->
+<!--                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"-->
+<!--                                                width="16%" align="center">Amount-->
+<!--                                            </th>-->
+<!--                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"-->
+<!--                                                width="24%" align="center">Note-->
+<!--                                            </th>-->
+<!--                                        </tr>-->
+<!--                                    </thead>-->
+<!--                                    <tbody>-->
+<!--                                        <t t-set="stt" t-value="0"/>-->
+<!--                                        <tr t-foreach="lines" t-as="line">-->
+<!--                                            <t t-set="sum_total" t-value="sum_total + (line['price_subtotal'] or 0)"/>-->
+<!--                                            <tr style="page-break-inside: avoid;">-->
+<!--                                                <t t-set="stt" t-value="stt+1"/>-->
+<!--                                                <td style="text-align: center; border:1px solid black;" border="1">-->
+<!--                                                    <t t-esc="stt"/>-->
+<!--                                                </td>-->
+<!--                                                <td style="text-align: left; margin: 2px; border:1px solid black;"-->
+<!--                                                    valign="center" border="1">-->
+<!--                                                    <t t-if="line['product']">-->
+<!--                                                        <span style="margin-left: 5px;" t-esc="line['product']"/>-->
+<!--                                                    </t>-->
+<!--                                                </td>-->
+<!--                                                <td style="text-align: center; border:1px solid black;" valign="center"-->
+<!--                                                    border="1">-->
+<!--                                                    <t t-if="line['price_unit']">-->
+<!--                                                        <span t-esc="line['price_unit']"-->
+<!--                                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>-->
+<!--                                                    </t>-->
+<!--                                                </td>-->
+<!--                                                <td style="border:1px solid black; border-collapse: collapse; text-align: center;"-->
+<!--                                                    border="1">-->
+<!--                                                    <t t-if="line['quantity']">-->
+<!--                                                        <span t-esc="'{0:,.1f}'.format(line['quantity'])"/>-->
+<!--                                                    </t>-->
+<!--                                                </td>-->
+<!--                                                <td style="border:1px solid black; border-collapse: collapse; text-align: center;"-->
+<!--                                                    border="1">-->
+<!--                                                    <t t-if="line['price_subtotal']">-->
+<!--                                                        <span t-esc="line['price_subtotal']"-->
+<!--                                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>-->
+<!--                                                    </t>-->
+<!--                                                </td>-->
+<!--                                                <td style="border:1px solid black; border-collapse: collapse; text-align: center;"-->
+<!--                                                    border="1">-->
+<!--                                                    <t t-if="line['description']">-->
+<!--                                                        <span style="margin-left: 5px;" t-esc="line['description']"/>-->
+<!--                                                    </t>-->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td colspan="4"-->
+<!--                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;"-->
+<!--                                                border="1">-->
+<!--                                                Subtotal:-->
+<!--                                            </td>-->
+<!--                                            <td colspan="2"-->
+<!--                                                style="text-align: right;margin-right: 10px; border:1px solid black; border-collapse: collapse; font-weight: bold;"-->
+<!--                                                border="1">-->
+<!--                                                <span t-esc="sum_total"-->
+<!--                                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td colspan="4"-->
+<!--                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;"-->
+<!--                                                border="1">-->
+<!--                                                Tax:-->
+<!--                                            </td>-->
+<!--                                            <td colspan="2"-->
+<!--                                                style="text-align: right;margin-right: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;">-->
+<!--                                                &lt;!&ndash;                                            <b style="margin-right: 5px;" t-esc="'{0:,.0f}'.format(qty)"/>&ndash;&gt;-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td colspan="4"-->
+<!--                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;">-->
+<!--                                                Amount Paid:-->
+<!--                                            </td>-->
+<!--                                            <td colspan="2"-->
+<!--                                                style="text-align: right;margin-right: 10px; border:1px solid black; border-collapse: collapse; font-weight: bold;">-->
+<!--                                                &lt;!&ndash;                                            <b style="margin-right: 5px;" t-esc="'{0:,.0f}'.format(qty)"/>&ndash;&gt;-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td colspan="4"-->
+<!--                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;">-->
+<!--                                                Total Amount:-->
+<!--                                            </td>-->
+<!--                                            <td colspan="2"-->
+<!--                                                style="text-align: right;margin: 10px; border:1px solid black; font-weight: bold;">-->
+<!--                                                <span t-esc="sum_total"-->
+<!--                                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                    </tbody>-->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <table class="table1" cellspacing="0" cellpadding="0" style="margin: 2;">-->
+<!--                                    <tr>-->
+<!--                                        <td style="text-align: center; margin: 5px; font-weight: bold; font-weight: bold; font-style: italic;"-->
+<!--                                            valign="bottom" border="0">-->
+<!--                                            Account Name : PHẠM HOÀNG SƠN-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="text-align: center; margin: 5px; font-weight: bold; font-style: italic;"-->
+<!--                                            border="0">-->
+<!--                                            Account Number : 65838-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="text-align: center; margin: 5px; font-weight: bold; font-style: italic;"-->
+<!--                                            border="0">-->
+<!--                                            Bank Name : Vietnam Prosperity Joint Stock Commercial Bank (VPBank)-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="text-align: center;margin: 5px; font-weight: bold; font-style: italic;"-->
+<!--                                            valign="top" border="0">-->
+
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td style="text-align: center;margin: 5px; font-weight: bold; font-style: italic;"-->
+<!--                                            valign="top" border="0">-->
+<!--                                            Transfer Note: Room Number – Property Address - Month (Ex: 202 - 15 Doc Ngu-->
+<!--                                            - October)-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <table class="table1" cellspacing="0" cellpadding="0">-->
+<!--                                    <tr>-->
+<!--                                        <td width="50%" valign="top"-->
+<!--                                            style="text-align: left; margin-left: 10px; border:1px solid black; border-collapse: collapse; height: 70px;">-->
+<!--                                            Cashier-->
+<!--                                        </td>-->
+<!--                                        <td width="50%" valign="top"-->
+<!--                                            style="text-align: left; margin-left: 10px; border:1px solid black; border-collapse: collapse; height: 70px;">-->
+<!--                                            Tenant Signature-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    &lt;!&ndash;                                    <tr>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                        <td>&ndash;&gt;-->
+
+<!--                                    &lt;!&ndash;                                        </td>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    </tr>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <tr>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                        <td>&ndash;&gt;-->
+
+<!--                                    &lt;!&ndash;                                        </td>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    </tr>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <tr>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                        <td>&ndash;&gt;-->
+
+<!--                                    &lt;!&ndash;                                        </td>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    </tr>&ndash;&gt;-->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+                        <div>
+                            <div>
+                                <table class="table2" cellspacing="0" cellpadding="0">
+                                    <tr style="line-height: 2">
+                                        <td style="width: 33%;padding: 0px; border:1px solid black; border-collapse: collapse;vertical-align:top;margin:0px"
+                                            align="center"
+                                            rowspan="3">
+                                            <img t-if="res_company.logo" width="200px" height="70px"
+                                                 style="vertical-align:top;margin:0px"
+                                                 t-att-src="'data:image/png;base64,%s' % to_text(res_company.logo)"/>
+                                        </td>
+                                        <td style="width: 67%; border:1px solid black; border-collapse: collapse; font-size: 20px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                            colspan="2" align="center">
+                                            <span>House Rent Receipt</span>&amp;nbsp;
+                                            <t t-if="o.date_invoice">
+                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr style="line-height: 1.3">
+                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                            align="center">
+                                            Month
+                                        </td>
+                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                            valign="middle" align="center">
+                                            <t t-if="o.date_invoice">
+                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr style="line-height: 1.3">
+                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;font-weight: bold;"
+                                            valign="middle" align="center" border="1">
+                                            Room No
+                                        </td>
+                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                            align="center" border="1" valign="middle">
+                                            <t t-if="o.room_id">
+                                                <span style="font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                                      t-field="o.room_id.name"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 33%; border:1px solid black; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold; font-style: italic;"
+                                            valign="middle" align="center">
+                                            Phone Number
+                                        </td>
+                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                            valign="middle" align="left">
+                                            Property Address
+                                        </td>
+                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                            align="center" border="1" valign="middle">
+                                            <t t-if="o.room_id.categ_id">
+                                                <span style="font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                                      t-field="o.room_id.categ_id.name"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 33%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                            valign="middle" align="center" border="1" rowspan="2">
+                                            <span>084.388.3838
+                                            </span>&amp;nbsp;-&amp;nbsp;
+                                            <span>084.588.3838</span>
+                                        </td>
+                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                            valign="middle" align="left">
+                                            Tenant Information
+                                        </td>
+                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                            align="center" border="1" valign="middle">
+                                            <t t-if="o.partner_id">
+                                                <span style="font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                                      t-field="o.partner_id.name"/>
+                                                <t t-if="o.partner_id.phone">
+                                                    &amp;nbsp;-&amp;nbsp;
+                                                    <span style="font-size: 16px; font-family: 'Times New Roman', Times, serif;"
+                                                          t-field="o.partner_id.phone"/>
+                                                </t>
+                                                <t t-if="o.partner_id.mobile">&amp;nbsp;-&amp;nbsp;
+                                                    <span style="font-size: 16px; font-family: 'Times New Roman', Times, serif;"
+                                                          t-field="o.partner_id.mobile"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                            valign="middle" align="left" border="1">
+                                            Electric Meter First
+                                        </td>
+                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                            align="center" border="1">
+                                            <t t-if="o.start_electricity_number">
+                                                <span style="font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                                      t-esc="'{0:,.0f}'.format(o.start_electricity_number)"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 33%; border:1px solid black; border-collapse: collapse; font-size: 13px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                            valign="middle" align="center">
+                                            Receipt No:&amp;nbsp;
+                                            <span style="font-size: 11px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                                  t-field="o.number"/>
+                                        </td>
+                                        <td style="width: 27%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; font-weight: bold;"
+                                            valign="middle" align="left" border="1">
+                                            Electric Meter Last
+                                        </td>
+                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                            align="center" border="1">
+                                            <t t-if="o.end_electricity_number">
+                                                <span style="font-size: 14px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
+                                                      t-esc="'{0:,.0f}'.format(o.end_electricity_number)"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br/>
+                            <div>
+                                <t t-set="sum_total" t-value="0"/>
+                                <t t-set="payment_amount" t-value="0"/>
+                                <t t-set="payments_vals" t-value="o._get_payments_vals()"/>
+                                <t t-foreach="payments_vals" t-as="payment_vals">
+                                    <t t-set="payment_amount" t-value="payment_amount + (payment_vals['amount'] or 0)"/>
+                                </t>
+                                <table class="table1" cellspacing="0" border="1" cellpadding="0">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"
+                                                width="8%" align="center">No
+                                            </th>
+                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"
+                                                width="25%" align="center">Description
+                                            </th>
+                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"
+                                                width="14%" align="center">Unit Price
+                                            </th>
+                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"
+                                                width="13%" align="center">Quantity
+                                            </th>
+                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"
+                                                width="16%" align="center">Amount
+                                            </th>
+                                            <th style="text-align: center; border:1px solid black; border-collapse: collapse; line-height:2.5; font-weight: bold;"
+                                                width="24%" align="center">Note
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set="stt" t-value="0"/>
+                                        <tr t-foreach="lines" t-as="line">
+                                            <t t-set="sum_total" t-value="sum_total + (line['price_subtotal'] or 0)"/>
+                                            <tr style="page-break-inside: avoid;">
+                                                <t t-set="stt" t-value="stt+1"/>
+                                                <td style="text-align: center; border:1px solid black;" border="1">
+                                                    <t t-esc="stt"/>
+                                                </td>
+                                                <td style="text-align: left; margin: 2px; border:1px solid black;"
+                                                    valign="middle" border="1">
+                                                    <t t-if="line['product']">
+                                                        <span style="margin-left: 5px;" t-esc="line['product']"/>
+                                                    </t>
+                                                </td>
+                                                <td style="text-align: center; border:1px solid black;" valign="middle"
+                                                    border="1">
+                                                    <t t-if="line['price_unit']">
+                                                        <span t-esc="line['price_unit']"
+                                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                    </t>
+                                                </td>
+                                                <td style="border:1px solid black; border-collapse: collapse; text-align: center;"
+                                                    border="1">
+                                                    <t t-if="line['quantity']">
+                                                        <span t-esc="'{0:,.1f}'.format(line['quantity'])"/>
+                                                    </t>
+                                                </td>
+                                                <td style="border:1px solid black; border-collapse: collapse; text-align: center;"
+                                                    border="1">
+                                                    <t t-if="line['price_subtotal']">
+                                                        <span t-esc="line['price_subtotal']"
+                                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                    </t>
+                                                </td>
+                                                <td style="border:1px solid black; border-collapse: collapse; text-align: center;"
+                                                    border="1">
+                                                    <t t-if="line['description']">
+                                                        <span style="margin-left: 5px;" t-esc="line['description']"/>
+                                                    </t>
+                                                </td>
+                                            </tr>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"
+                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;"
+                                                border="1">
+                                                Subtotal:
+                                            </td>
+                                            <td colspan="2"
+                                                style="text-align: right;margin-right: 10px; border:1px solid black; border-collapse: collapse; font-weight: bold;"
+                                                border="1">
+                                                <span t-esc="sum_total"
+                                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"
+                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;"
+                                                border="1">
+                                                Tax:
+                                            </td>
+                                            <td colspan="2" 
+                                                style="text-align: right;margin-right: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;">
+                                                <!--                                            <b style="margin-right: 5px;" t-esc="'{0:,.0f}'.format(qty)"/>-->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"
+                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;">
+                                                Amount Paid:
+                                            </td>
+                                            <td colspan="2"
+                                                style="text-align: right;margin-right: 10px; border:1px solid black; border-collapse: collapse; font-weight: bold;">
+                                                <span t-esc="payment_amount"
+                                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"
+                                                style="margin-right: 10px; text-align: right;margin: 5px; border:1px solid black; border-collapse: collapse; font-weight: bold;">
+                                                Total Amount:
+                                            </td>
+                                            <td colspan="2"
+                                                style="text-align: right;margin: 10px; border:1px solid black; font-weight: bold;">
+                                                <span t-esc="o.residual"
+                                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <table class="table1" cellspacing="0" cellpadding="0" style="margin: 2;">
+                                    <tr>
+                                        <td style="text-align: center; margin: 5px; font-weight: bold; font-weight: bold; font-style: italic;"
+                                            valign="bottom" border="0">
+                                            Account Name : PHẠM HOÀNG SƠN
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center; margin: 5px; font-weight: bold; font-style: italic;"
+                                            border="0">
+                                            Account Number : 65838
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center; margin: 5px; font-weight: bold; font-style: italic;"
+                                            border="0">
+                                            Bank Name: Vietnam Prosperity Joint Stock Commercial Bank (VPBank)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;margin: 5px; font-weight: bold; font-style: italic;"
+                                            valign="top" border="0">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;margin: 5px; font-weight: bold; font-style: italic;"
+                                            valign="top" border="0">
+                                            Transfer Note: Room Number – Property Address - Month (Ex: 202 - 15 Doc Ngu
+                                            - October)
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <table class="table1" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="50%" valign="top"
+                                            style="text-align: left; margin-left: 10px; border:1px solid black; border-collapse: collapse; height: 70px;">
+                                            Cashier
+                                        </td>
+                                        <td width="50%" valign="top"
+                                            style="text-align: left; margin-left: 10px; border:1px solid black; border-collapse: collapse; height: 70px;">
+                                            Tenant Signature
+                                        </td>
+                                    </tr>
+                                    <!--                                    <tr>-->
+                                    <!--                                        <td>-->
+
+                                    <!--                                        </td>-->
+                                    <!--                                    </tr>-->
+                                    <!--                                    <tr>-->
+                                    <!--                                        <td>-->
+
+                                    <!--                                        </td>-->
+                                    <!--                                    </tr>-->
+                                    <!--                                    <tr>-->
+                                    <!--                                        <td>-->
+
+                                    <!--                                        </td>-->
+                                    <!--                                    </tr>-->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    </t>-->
+                </t>
+            </t>
+            >
+            <!--</t>-->
+        </template>
+
+        <!--Tùy chỉnh dpi theo phiên bản thư viện wkhtmltopdf-->
+        <record id="vna_report_invoice_format" model="report.paperformat">
+            <field name="name">Invoice report Format</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">6</field>
+            <field name="margin_right">6</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <report
+                id="vna_report_invoice_eng"
+                model="account.invoice"
+                string="Invoices (English)"
+                report_type="qweb-pdf"
+                name="hotel_management.report_invoice_eng"
+                file="hotel_management.report_invoice_eng"
+                print_report_name="(object._get_report_vna_filename())"
+                groups="account.group_account_invoice"
+        />
+
+        <record id="vna_report_invoice_eng" model="ir.actions.report">
+            <field name="paperformat_id" ref="hotel_management.vna_report_invoice_format"/>
+        </record>
+    </data>
+</odoo>

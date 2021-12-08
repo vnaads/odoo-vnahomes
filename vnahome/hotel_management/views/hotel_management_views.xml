@@ -1,0 +1,173 @@
+<odoo>
+
+    <record id="vna_view_hotel_room_form" model="ir.ui.view">
+        <field name="name">vna_view_hotel_room_form</field>
+        <field name="model">hotel.room</field>
+        <field name="inherit_id" ref="hotel.view_hotel_room_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_medium']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_folio" type="object" class="oe_stat_button" icon="fa-pencil-square-o"
+                            attrs="{'invisible': [('folio_count', '=', 0)]}">
+                        <field name="folio_count" widget="statinfo"/>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='information_hotel_room']/group[1]" position="after">
+                <newline/>
+                <separator colspan='4' string="Hợp đồng"/>
+                <field name="folio_ids"/>
+            </xpath>
+            <xpath expr="//field[@name='list_price']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='product_manager']" position="after">
+                <field name="company_id"/>
+                <field name="list_price"/>
+            </xpath>
+            <xpath expr="//field[@name='description']" position="after">
+                <group>
+                    <field name="analytic_account_id"/>
+                </group>
+            </xpath>
+            <xpath expr="//page[3]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vna_view_hotel_room_type_form" model="ir.ui.view">
+        <field name="name">vna_view_hotel_room_type_form</field>
+        <field name="model">hotel.room.type</field>
+        <field name="inherit_id" ref="hotel.view_hotel_room_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="before">
+                <field name="group_id"/>
+                <field name="company_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vna_view_hotel_folio_form" model="ir.ui.view">
+        <field name="name">vna_view_hotel_folio_form</field>
+        <field name="model">hotel.folio</field>
+        <field name="inherit_id" ref="hotel.view_hotel_folio_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='service_lines']/tree" position="attributes">
+                <attribute name="editable">bottom</attribute>
+            </xpath>
+            <xpath expr="//field[@name='room_lines']/tree" position="attributes">
+                <attribute name="editable">bottom</attribute>
+            </xpath>
+            <xpath expr="//field[@name='service_lines']/tree/field[@name='product_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='room_lines']/tree/field[@name='product_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='room_lines']/tree/field[@name='product_id']" position="after">
+                <field name="room_id" string="Room No" required="1"/>
+            </xpath>
+            <xpath expr="//page[@name='folio_name']//field[@name='product_id']" position="after">
+                <field name="room_id" string="Room No" required="1"/>
+                <field name="month_of_rent"/>
+            </xpath>
+            <xpath expr="//page[@name='folio_name']//field[@name='product_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//tree[1]//field[@name='name']" position="after">
+                <field name="month_of_rent"/>
+            </xpath>
+            <xpath expr="//field[@name='room_lines']//field[@name='price_subtotal']" position="replace">
+                <field name="price_subtotal" invisible="1"/>
+            </xpath>
+            <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']" position="replace">
+                <button name="action_wizzard_invoice" context="{'vna_context': True}"
+                        string="Create Invoice" type="object" class="btn-primary"
+                        attrs="{'invisible': ['|',('state', 'in', ('draft','cancel','done'))]}"/>
+                <button name="action_open_payment_form" type="object"
+                        attrs="{'invisible': ['|',('state', 'in', ('draft','cancel','done'))]}"
+                        string="Register Payment" groups="account.group_account_invoice" class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="product_domain_ids" widget="many2many_tags" invisible="1"/>
+                <field name="room_domain_ids" widget="many2many_tags" invisible="1"/>
+                <field name="readonly_field" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="start_electricity_number"/>
+                <field name="company_id"/>
+            </xpath>
+            <xpath expr="//field[@name='room_lines']" position="attributes">
+                <attribute name="attrs">{'readonly': [('readonly_field', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='service_lines']/tree/field[@name='name']" position="after">
+                <field name="room_product_id" string="Room No" domain="[('id', 'in', parent.product_domain_ids)]"
+                       invisible="1"/>
+                <field name="room_id" string="Room No" domain="[('id', 'in', parent.room_domain_ids)]" required="1"/>
+            </xpath>
+            <xpath expr="//page[@name='service_line']//field[@name='name']" position="after">
+                <field name="room_product_id" string="Room No" domain="[('id', 'in', parent.product_domain_ids)]"
+                       invisible="1"/>
+                <field name="room_id" string="Room No"
+                       domain="[('iaccount_invoice_payment_btnd', 'in', parent.room_domain_ids)]" required="1"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_ids']" position="after">
+                <field name="folio_invoice_ids" colspan="4" nolabel="1"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='payment_history']" position="inside">
+                <field name="folio_payment_ids" colspan="4" nolabel="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vna_view_hotel_folio_tree" model="ir.ui.view">
+        <field name="name">vna_view_hotel_folio_tree</field>
+        <field name="model">hotel.folio</field>
+        <field name="inherit_id" ref="hotel.view_hotel_folio_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="room_id"/>
+                <field name="room_checkin_date"/>
+                <field name="room_checkout_date"/>
+                <field name="expired_date" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vna_view_hotel_folio_search" model="ir.ui.view">
+        <field name="name">vna_view_hotel_folio_search</field>
+        <field name="model">hotel.folio</field>
+        <field name="inherit_id" ref="hotel.view_hotel_folio_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="room_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='checkout_date']" position="after">
+                <filter name="expired_30days" string="Hết hạn trong 1 tháng" domain="[('expired_date','&lt;=', 30)]"/>
+                <filter name="expired_60days" string="Hết hạn trong 2 tháng" domain="[('expired_date','&lt;=', 60)]"/>
+                <filter name="expired_more" string="Hết hạn hơn 2 tháng" domain="[('expired_date','&gt;=', 60)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='checkout_date']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='partner_id']" position="after">
+                <filter name="room_id" string="Room" context="{'group_by':'room_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vna_view_hotel_services_form" model="ir.ui.view">
+        <field name="name">vna_view_hotel_services_form</field>
+        <field name="model">hotel.services</field>
+        <field name="inherit_id" ref="hotel.view_hotel_services_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_manager']" position="after">
+                <field name="is_electric_type"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

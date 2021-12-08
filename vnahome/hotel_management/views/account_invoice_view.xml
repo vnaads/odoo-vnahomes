@@ -1,0 +1,180 @@
+<odoo>
+
+    <record id="vna_view_invoice_form" model="ir.ui.view">
+        <field name="name">vna_view_invoice_form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='account_analytic_id']" position="attributes">
+                <attribute name="context">{'default_partner_id': parent.partner_id, 'vna_show_aag': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='account_analytic_id']" position="after">
+                <field name="account_analytic_group"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="before">
+                <field name="room_id"/>
+            </xpath>
+            <xpath expr="//field[@name='date_invoice']" position="after">
+                <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="start_electricity_number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="end_electricity_number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="total_electricity_number_consumed" invisible="0"/>
+            </xpath>
+            <xpath expr="//button[@id='account_invoice_payment_btn']" position="replace">
+                <button name="action_open_payment_form" type="object"
+                        attrs="{'invisible': ['|',('state', 'in', ('draft','cancel','done'))]}"
+                        string="Register Payment" groups="account.group_account_invoice" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vna_view_invoice_supplier_form" model="ir.ui.view">
+        <field name="name">vna_view_invoice_supplier_form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='account_analytic_id']" position="attributes">
+                <attribute name="context">{'default_partner_id': parent.partner_id, 'vna_show_aag': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='account_analytic_id']" position="after">
+                <field name="account_analytic_group"/>
+            </xpath>
+            <xpath expr="//field[@name='date']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="before">
+                <field name="room_id"/>
+            </xpath>
+            <xpath expr="//field[@name='date_invoice']" position="after">
+                <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vna_view_invoice_line_tree" model="ir.ui.view">
+        <field name="name">account.invoice.line.tree</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree[1]" position="attributes">
+                <attribute name="editable">top</attribute>
+                <attribute name="create">1</attribute>
+                <attribute name="delete">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="invoice_name" invisible="1"/>
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="company_id" invisible="1"/>
+                <field name="invoice_type" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='price_subtotal']" position="before">
+                <field name="invoice_line_tax_ids" widget="many2many_tags" options="{'no_create': True}"
+                       context="{'type': invoice_type}"
+                       domain="[('type_tax_use','!=','none'),('company_id', '=', company_id)]"/>
+            </xpath>
+            <xpath expr="//field[@name='quantity']" position="before">
+                <field name="state"/>
+                <field name="account_analytic_id" options="{'no_create': True}"/>
+                <field name="account_analytic_group" options="{'no_create': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='account_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    <record id="vna_view_invoice_line_tree" model="ir.ui.view">-->
+    <!--        <field name="name">account.invoice.line.tree</field>-->
+    <!--        <field name="model">account.invoice.line</field>-->
+    <!--        <field name="inherit_id" ref="account.view_invoice_line_form"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//field[@name='name']" position="before">-->
+    <!--                <field name="invoice_name"/>-->
+    <!--                <field name="partner_id"/>-->
+    <!--            </xpath>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <record id="vna_view_account_journal_search" model="ir.ui.view">
+        <field name="name">account.invoice.line.search</field>
+        <field name="model">account.invoice.line</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <search string="Search Account Invoice Line">
+                <filter name="state" string="State"
+                        domain="[('invoice_id.state', 'in', ('open','in_payment','paid'))]"/>
+                <filter name="open" string="Open" domain="[('invoice_id.state', '=', 'open')]"/>
+                <filter name="in_payment" string="In Payment" domain="[('invoice_id.state', '=', 'in_payment')]"/>
+                <filter name="paid" string="Paid" domain="[('invoice_id.state', '=', 'paid')]"/>
+                <filter name="draft" string="Draft" domain="[('invoice_id.state', '=', 'draft')]"/>
+                <filter name="cancel" string="Cancel" domain="[('invoice_id.state', '=', 'cancel')]"/>
+                <group expand="1" string="Group By">
+                    <filter name="room_type" context="{'group_by' : 'room_categ_id'}" string="Căn"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="vna_action_invoice_line" model="ir.actions.act_window">
+        <field name="name">Dòng hóa đơn</field>
+        <field name="res_model">account.invoice.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="vna_view_account_journal_search"/>
+        <field name="context">{'search_default_state': 1}</field>
+        <field name="domain">[('invoice_id.type' ,'=', 'out_invoice')]</field>
+        <field name="view_id" ref="vna_view_invoice_line_tree"/>
+    </record>
+
+    <menuitem action="vna_action_invoice_line" id="menu_vna_action_invoice_line"
+              parent="account.menu_finance_receivables" sequence="15"
+              name="Dòng hóa đơn"/>
+
+    <!--    tạo menu Nhập số điện cho hd-->
+    <record id="vna_import_electricity_invoice_tree" model="ir.ui.view">
+        <field name="name">vna_import_electricity_invoice_tree</field>
+        <field name="model">account.invoice</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice"
+                  editable="bottom">
+                <field name="partner_id" groups="base.group_user" string="Customer" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="start_electricity_number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="end_electricity_number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="date_invoice" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="number" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="commercial_partner_id" invisible="1"/>
+                <field name="reference" invisible="1"/>
+                <field name="name" invisible="1"/>
+                <field name="journal_id" invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                <field name="user_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="date_due" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="origin" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="amount_untaxed_invoice_signed" string="Tax Excluded" sum="Total" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="amount_tax_signed" string="Tax" sum="Total" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="amount_total_signed" string="Total" sum="Total" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="residual_signed" string="Amount Due" sum="Amount Due" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="company_currency_id" invisible="1"/>
+                <field name="state"/>
+                <field name="type" invisible="context.get('type',True)"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="vna_action_import_electricity_invoice" model="ir.actions.act_window">
+        <field name="name">Invoices</field>
+        <field name="res_model">account.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="vna_import_electricity_invoice_tree"/>
+        <field name="context">{'type':'out_invoice'}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+    </record>
+
+    <menuitem action="vna_action_import_electricity_invoice" id="menu_vna_action_import_electricity_invoice"
+              parent="account.menu_finance_receivables" sequence="15"
+              name="Nhập số điện cho hóa đơn"/>
+</odoo>
