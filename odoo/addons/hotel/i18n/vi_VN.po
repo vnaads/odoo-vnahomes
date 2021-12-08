@@ -1,0 +1,3092 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hotel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-22 15:09+0000\n"
+"PO-Revision-Date: 2020-04-22 15:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__product_variant_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__product_variant_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__product_variant_count
+msgid "# Product Variants"
+msgstr "SL biến thể sản phẩm"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "<span title=\"fa_icon\" class=\"fa fa-bars fa-lg\"/>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>CheckIN</strong>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>CheckOut</strong>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>Customer Name</strong>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>Folio No.</strong>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>From:</strong>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>Net Total:</strong>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>To:</strong>"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "<strong>Total</strong>"
+msgstr "<strong>Tổng</strong>"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__description_sale
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__description_sale
+#: model:ir.model.fields,help:hotel.field_hotel_services__description_sale
+msgid "A description of the Product that you want to communicate to your customers. This description will be copied to every Sales Order, Delivery Order and Customer Invoice/Credit Note"
+msgstr "Mô tả Sản phẩm mà bạn muốn giao tiếp với khách hàng của mình. Mô tả này sẽ được sao chép vào mọi Đơn đặt hàng, Đơn hàng Giao hàng và Hóa đơn Khách hàng / Ghi chú tín dụng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__type
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__type
+#: model:ir.model.fields,help:hotel.field_hotel_services__type
+msgid "A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr "Sản phẩm lưu kho là sản phẩm bạn muốn quản lý lượng tồn kho của nó. Hệ thống sẽ cần cài thêm phân hệ Kho.\n"
+"Sản phẩm tiêu dùng là sản phẩm bạn không cần quản lý lượng tồn kho.\n"
+"Sản phẩm dịch vụ là sản phẩm bạn cung cấp."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__access_warning
+msgid "Access warning"
+msgstr "Cảnh báo truy cập"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__qty_delivered_method
+#: model:ir.model.fields,help:hotel.field_hotel_service_line__qty_delivered_method
+msgid "According to product configuration, the delivered quantity can be automatically computed by mechanism :\n"
+"  - Manual: the quantity is set manually on the line\n"
+"  - Analytic From expenses: the quantity is the quantity sum from posted expenses\n"
+"  - Timesheet: the quantity is the sum of hours recorded on tasks linked to this sale line\n"
+"  - Stock Moves: the quantity comes from confirmed pickings\n"
+""
+msgstr "Dựa trên cài đặt của dự án, lượng công việc đã thực hiện có thể được tính theo :\n"
+"  - Thủ công: số lượng được ghi nhận thủ công ở mỗi dòng\n"
+"  - Phân tích chi phí: số lượng dựa trên tổng các khoản chi phí đã ghi nhận\n"
+"  - Thời gian biểu: theo số lượng tổng giờ đã được ghi nhận của các công việc liên kết với nội dung trên đơn hàng\n"
+"  - Chuyển kho: số lượng dựa trên số lượng mã phiếu kho đã xác nhận\n"
+""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_needaction
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_needaction
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_needaction
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_needaction
+msgid "Action Needed"
+msgstr "Cần có Hành động"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__active
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__active
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__active
+msgid "Active"
+msgstr "Có hiệu lực"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__activity_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__activity_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__activity_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__activity_ids
+msgid "Activities"
+msgstr "Các hoạt động"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__activity_state
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__activity_state
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__activity_state
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__activity_state
+msgid "Activity State"
+msgstr "Tình trạng hoạt động"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_res_company__additional_hours
+msgid "Additional Hours"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_folio_report_wizard
+msgid "Allow print folio report by date"
+msgstr ""
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.action_hotel_room_amenities_view_form
+#: model:ir.ui.menu,name:hotel.menu_action_hotel_room_amenities_view_form
+msgid "Amenities"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__categ_id
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_aenities_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_list
+msgid "Amenities Category"
+msgstr ""
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.action_hotel_room_amenities_type_view_form
+msgid "Amenities Type"
+msgstr ""
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.menu_amenity
+msgid "Amenity"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_list
+msgid "Amenity Rate"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_type_form
+msgid "Amenity Type"
+msgstr ""
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.menu_action_hotel_room_amenities_type_view_form
+msgid "Amenity Types"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+msgid "Amenity manager"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_aenities_search
+msgid "Amenity rate"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__amount_undiscounted
+msgid "Amount Before Discount"
+msgstr "Tổng Trước Chiết khấu"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__analytic_account_id
+msgid "Analytic Account"
+msgstr "Tài khoản quản trị"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__analytic_tag_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__analytic_tag_ids
+msgid "Analytic Tags"
+msgstr "Từ khóa phân tích"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__analytic_line_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__analytic_line_ids
+msgid "Analytic lines"
+msgstr "Phát sinh KT Quản trị"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__floor_id
+msgid "At which floor the room is located."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_attachment_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_attachment_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_attachment_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số đính kèm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__attribute_value_ids
+msgid "Attribute Values"
+msgstr "Giá trị thuộc tính"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__authorized_transaction_ids
+msgid "Authorized Transactions"
+msgstr "Giao dịch được ủy quyền"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Automatic Declaration"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_report_hotel_report_hotel_folio
+msgid "Auxiliar to get the report"
+msgstr ""
+
+#. module: hotel
+#: selection:hotel.room,status:0
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Available"
+msgstr "Trống"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__available_in_pos
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__available_in_pos
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__available_in_pos
+msgid "Available in POS"
+msgstr "Khả dụng ở POS"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__barcode
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__barcode
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__barcode
+msgid "Barcode"
+msgstr "Mã vạch"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__image
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__image
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__image
+msgid "Big-sized image"
+msgstr "Hình cỡ lớn"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Branch"
+msgstr "Công ty"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_updatable
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_updatable
+msgid "Can Edit Product"
+msgstr "Có thể Sửa Sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__purchase_ok
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__purchase_ok
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__purchase_ok
+msgid "Can be Purchased"
+msgstr "Có thể mua được"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__rental
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__rental
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__rental
+msgid "Can be Rent"
+msgstr "Có thể (được) cho thuê"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__sale_ok
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__sale_ok
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__sale_ok
+msgid "Can be Sold"
+msgstr "Có thể bán được"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_wizard
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Cancel Folio"
+msgstr "Hủy hợp đồng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__capacity
+msgid "Capacity"
+msgstr "Sức chứa"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Capacity:"
+msgstr "Sức chứa"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__amenity_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__categ_id
+msgid "Category"
+msgstr "Danh mục"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__route_from_categ_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__route_from_categ_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__route_from_categ_ids
+msgid "Category Routes"
+msgstr "Tuyến theo nhóm SP"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__pos_categ_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__pos_categ_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__pos_categ_id
+msgid "Category used in the Point of Sale."
+msgstr "Loại sử dụng cho Điểm bán hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__checkin_date
+msgid "Check In"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__check_in
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__checkin_date
+msgid "Check In Date"
+msgstr "Ngày check in"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__checkout_date
+msgid "Check Out"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__check_out
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__checkout_date
+msgid "Check Out Date"
+msgstr "Ngày check out"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__to_weight
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__to_weight
+#: model:ir.model.fields,help:hotel.field_hotel_services__to_weight
+msgid "Check if the product should be weighted using the hardware scale integration."
+msgstr "Chọn nếu sản phẩm này cần cân trước khi thanh toán."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__available_in_pos
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__available_in_pos
+#: model:ir.model.fields,help:hotel.field_hotel_services__available_in_pos
+msgid "Check if you want this product to appear in the Point of Sale."
+msgstr "Chọn nếu bạn muốn sản phẩm hiển thị trên màn hình bán hàng"
+
+#. module: hotel
+#: code:addons/hotel/models/hotel.py:1000
+#, python-format
+msgid "Checkout must be greater or equal checkin date"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__child_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__child_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__child_ids
+msgid "Child Categories"
+msgstr "Nhóm sản phẩm con"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__color
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__color
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__color
+msgid "Color Index"
+msgstr "Mã màu"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__commitment_date
+msgid "Commitment Date"
+msgstr "Ngày cam kết"
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_res_company
+msgid "Companies"
+msgstr "Công ty"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__company_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__company_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__company_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__company_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__company_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__effective_date
+msgid "Completion date of the first delivery order."
+msgstr "Ngày hoàn thành đơn hàng giao hàng đầu tiên."
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.hotel_configuration_menu
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Confirm Sale"
+msgstr "Xác nhận hợp đồng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__confirmation_date
+msgid "Confirmation Date"
+msgstr "Ngày xác nhận"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__standard_price
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__standard_price
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__standard_price
+msgid "Cost"
+msgstr "Giá vốn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__cost_currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__cost_currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__cost_currency_id
+msgid "Cost Currency"
+msgstr "Đơn vị tiền tệ giá vốn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__cost_method
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__cost_method
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__cost_method
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Cost Method"
+msgstr "Phương pháp Giá vốn"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__standard_price
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__standard_price
+#: model:ir.model.fields,help:hotel.field_hotel_services__standard_price
+msgid "Cost used for stock valuation in standard price and as a first price to set in average/fifo. Also used as a base price for pricelists. Expressed in the default unit of measure of the product."
+msgstr "Giá vốn được sử dụng cho mục đích định giá tồn kho theo phương thức giá vốn 'Giá tiêu chuẩn' và được coi như là số liệu đầu tiên để thiết lập giá vốn trong phương pháp trung bình hoặc FIFO. Nó cũng được sử dụng như là giá cơ bản cho các bảng giá. Giá vốn này là đơn giá theo đơn vị tính mặc định của sản phẩm."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_cost_method
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_cost_method
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_cost_method
+msgid "Costing Method"
+msgstr "Phương pháp giá vốn"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Create Invoice"
+msgstr "Tạo hóa đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__create_uid
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__create_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__create_date
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__create_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__currency_rate
+msgid "Currency Rate"
+msgstr "Tỷ giá"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_search
+msgid "Current Booking"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__qty_available
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__qty_available
+#: model:ir.model.fields,help:hotel.field_hotel_services__qty_available
+msgid "Current quantity of products.\n"
+"In a context with a single Stock Location, this includes goods stored at this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr "Số lượng hiện tại của sản phẩm.\n"
+"Trong ngữ cảnh với một Địa điểm Lưu trữ, nó bao gồm hàng hoá được lưu trữ tại địa điểm này, hoặc bất kỳ địa điểm con nào của nó.\n"
+"Trong ngữ cảnh với một Nhà kho, nó bao gồm hàng hoá được lưu trữ trong Địa điểm Lưu trữ của Nhà kho này, hoặc bất kỳ địa điểm con nào của nó.\n"
+"được lưu trữ trong Địa điểm Lưu trữ của Nhà kho của Cửa hàng này, hoặc bất kỳ địa điểm con nào của nó.\n"
+"Nếu không, nó bao gồm hàng hoá được lưu trữ trong bất kỳ Địa điểm Kho nào có kiểu là 'Nội bộ'."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__partner_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__order_partner_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__order_partner_id
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_search
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__sale_delay
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__sale_delay
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__sale_delay
+msgid "Customer Lead Time"
+msgstr "Thời gian giao hàng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__access_url
+msgid "Customer Portal URL"
+msgstr "URL cổng thông tin khách hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__partner_ref
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__partner_ref
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__partner_ref
+msgid "Customer Ref"
+msgstr "Mã khách hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__client_order_ref
+msgid "Customer Reference"
+msgstr "Tham chiếu của Khách hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__taxes_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__taxes_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__taxes_id
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Customer Taxes"
+msgstr "Thuế bán hàng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Customer taxes applied on the service."
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Customer taxes apply on the perticular room."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__confirmation_date
+msgid "Date on which the sales order is confirmed."
+msgstr "Ngày mà đơn hàng được xác nhận"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__supplier_taxes_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__supplier_taxes_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__supplier_taxes_id
+msgid "Default taxes used when buying the product."
+msgstr "Thuế mặc định dùng khi mua sản phẩm."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__taxes_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__taxes_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__taxes_id
+msgid "Default taxes used when selling the product."
+msgstr "Thuế mặc định dùng khi bán sản phẩm."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__uom_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__uom_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "Đơn vị tình mặc định dùng cho tất cả hoạt động kho."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__uom_po_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__uom_po_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__uom_po_id
+msgid "Default unit of measure used for purchase orders. It must be in the same category as the default unit of measure."
+msgstr "Đơn vị mua hàng mặc định được sử dụng cho các đơn mua hàng phải cùng loại với đơn vị mặc định."
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+msgid "Define supplier taxes if there any on the ty."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__seller_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__seller_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__seller_ids
+msgid "Define vendor pricelists."
+msgstr "Xác định bảng giá nhà cung cấp"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Delete"
+msgstr "Xoá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__qty_delivered_manual
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__qty_delivered_manual
+msgid "Delivered Manually"
+msgstr "Cung cấp thủ công"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__qty_delivered
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__qty_delivered
+msgid "Delivered Quantity"
+msgstr "Số lượng Đã giao"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__partner_shipping_id
+msgid "Delivery Address"
+msgstr "Địa chỉ giao hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__customer_lead
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__customer_lead
+msgid "Delivery Lead Time"
+msgstr "Thời gian giao hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__delivery_count
+msgid "Delivery Orders"
+msgstr "Giao hàng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__partner_shipping_id
+msgid "Delivery address for current sales order."
+msgstr "Địa chỉ giao hàng cho đơn hàng hiện tại."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__expected_date
+msgid "Delivery date you can promise to the customer, computed from product lead times and from the shipping policy of the order."
+msgstr "Ngày giao hàng bạn có thể hứa với khách hàng, được tính từ thời gian giao hàng của sản phẩm và từ chính sách giao hàng của đơn hàng."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__sale_delay
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__sale_delay
+#: model:ir.model.fields,help:hotel.field_hotel_services__sale_delay
+msgid "Delivery lead time, in days. It's the number of days, promised to the customer, between the confirmation of the sales order and the delivery."
+msgstr "Thời gian giao hàng, tính theo ngày. Đây là số ngày hứa với khách hàng, khoảng thời gian xác nhận đơn hàng đến ngày giao "
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__route_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__route_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__route_ids
+msgid "Depending on the modules installed, this will allow you to define the route of the product: whether it will be bought, manufactured, MTO, etc."
+msgstr "Dựa vào việc cài đặt phân hệ, hệ thống sẽ cho phép bạn xác định tuyền đường của sản phẩm: được mua, sản xuất, MTO, v.v..."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__description
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__description
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__name
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__description
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__description_pickingout
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__description_pickingout
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__description_pickingout
+msgid "Description on Delivery Orders"
+msgstr "Mô tả cho phiếu xuất hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__description_picking
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__description_picking
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__description_picking
+msgid "Description on Picking"
+msgstr "Mô tả trên phiếu giao nhận"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__description_pickingin
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__description_pickingin
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__description_pickingin
+msgid "Description on Receptions"
+msgstr "Mô tả cho phiếu nhận hàng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Descriptions"
+msgstr "mô tả"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__discount
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__discount
+msgid "Discount (%)"
+msgstr "Chiết khấu (%)"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__display_name
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__display_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__display_name
+#: model:ir.model.fields,field_description:hotel.field_report_hotel_report_hotel_folio__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__display_type
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__display_type
+msgid "Display Type"
+msgstr "Loại hiển thị"
+
+#. module: hotel
+#: selection:sale.advance.payment.inv,advance_payment_method:0
+msgid "Down payment (fixed amount)"
+msgstr "Tiền đặt cọc (số tiền cố định)"
+
+#. module: hotel
+#: selection:sale.advance.payment.inv,advance_payment_method:0
+msgid "Down payment (percentage)"
+msgstr "Tiền đặt cọc (theo phần trăm)"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__is_downpayment
+#: model:ir.model.fields,help:hotel.field_hotel_service_line__is_downpayment
+msgid "Down payments are made when creating invoices from a sales order. They are not copied when duplicating a sales order."
+msgstr "Khoản trả trước được thực hiện khi tạo hóa đơn từ đơn đặt hàng. Chúng không được sao chép khi sao chép một đơn đặt hàng."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__duration_dummy
+msgid "Duration Dummy"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__duration
+msgid "Duration in Days"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Edit"
+msgstr "Sửa"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__effective_date
+msgid "Effective Date"
+msgstr "Ngày hiệu lực"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__date_end
+msgid "End Date"
+msgstr "Ngày kết thúc"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__tracking
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__tracking
+#: model:ir.model.fields,help:hotel.field_hotel_services__tracking
+msgid "Ensure the traceability of a storable product in your warehouse."
+msgstr "Đảm bảo truy xuất nguồn gốc của một sản phẩm có thể lưu trữ trong kho của bạn."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__expected_date
+msgid "Expected Date"
+msgstr "Ngày dự kiến"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_account_expense_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_account_expense_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_account_expense_id
+msgid "Expense Account"
+msgstr "Tài khoản chi phí"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__expense_policy
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__expense_policy
+#: model:ir.model.fields,help:hotel.field_hotel_services__expense_policy
+msgid "Expenses and vendor bills can be re-invoiced to a customer.With this option, a validated expense can be re-invoice to a customer at its cost or sales price."
+msgstr "Chi phí và hóa đơn nhà cung cấp có thể được lập lại hóa đơn cho khách hàng. Với tùy chọn này, chi phí được xác thực có thể được gửi lại cho khách hàng với chi phí hoặc giá bán."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Vị thế tài chính"
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.open_hotel_floor_form_tree
+#: model:ir.model,name:hotel.model_hotel_floor
+#: model:ir.ui.menu,name:hotel.menu_open_hotel_floor_form_tree
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Floor"
+msgstr "Tầng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__name
+msgid "Floor Name"
+msgstr "Tên tầng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__floor_id
+msgid "Floor No"
+msgstr "Số tầng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__folio_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__folio_id
+#: model:ir.ui.menu,name:hotel.menu_all_folio
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Folio"
+msgstr "Hợp đồng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Folio Line"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__folio_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__name
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Folio Number"
+msgstr "Số hợp đồng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_wizard
+msgid "Folio Report"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Folio Room Reservation Line"
+msgstr "Dòng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Folio Room Reservations"
+msgstr "Lịch sử"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.hotel_folio_calendar_view
+msgid "Folios"
+msgstr "Hợp đồng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_follower_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_follower_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_follower_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_follower_ids
+msgid "Followers"
+msgstr "Theo dõi"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_channel_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_channel_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_channel_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Người theo dõi (Các kênh)"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_partner_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_partner_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_partner_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Các đối tác)"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__virtual_available
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__virtual_available
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__virtual_available
+msgid "Forecast Quantity"
+msgstr "Số lượng dự kiến"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__virtual_available
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__virtual_available
+#: model:ir.model.fields,help:hotel.field_hotel_services__virtual_available
+msgid "Forecast quantity (computed as Quantity On Hand - Outgoing + Incoming)\n"
+"In a context with a single Stock Location, this includes goods stored in this location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr "Số lượng dự kiến (được tính bằng Số lượng thực tế - Số lượng sẽ xuất + Số lượng sắp về)\n"
+"Trong ngữ cảnh một địa điểm kho, nó bao gồm số lượng được lưu trữ trong địa điểm này, hoặc các địa điểm con của nó.\n"
+"Trong ngữ cảnh một nhà kho, nó bao gồm số lượng được lưu trữ trong địa điểm kho của nhà kho này, hoặc các địa điểm con của nó.\n"
+"Nếu không, nó bao gồm số lượng được lữu trữ trong bất kỳ Địa điểm Kho nào có kiểu là 'Nội bộ'."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__ser_checkin_date
+msgid "From Date"
+msgstr ""
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.open_hotel_folio1_form_tree_all
+#: model:ir.ui.menu,name:hotel.menu_open_hotel_folio1_form_tree_all
+msgid "Generate Folio"
+msgstr "Hợp đồng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__packaging_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__packaging_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__packaging_ids
+msgid "Gives the different ways to package the same product."
+msgstr "Cung cấp các cách khác nhau để đóng gói cùng một sản phẩm."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__sequence
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__sequence
+#: model:ir.model.fields,help:hotel.field_hotel_services__sequence
+msgid "Gives the sequence order when displaying a product list"
+msgstr "Cung cấp trình tự khi hiển thị một danh mục sản phẩm"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Guest Name"
+msgstr "Tên khách hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__hide_expense_policy
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__hide_expense_policy
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__hide_expense_policy
+msgid "Hide Expense Policy"
+msgstr "Ẩn chính sách chi phí"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "History"
+msgstr "Lịch sử"
+
+#. module: hotel
+#: selection:hotel.room,status:0
+msgid "Holding"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_floor_form
+msgid "Hotel Floor"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_floor_tree
+msgid "Hotel Floors"
+msgstr ""
+
+#. module: hotel
+#: model:ir.actions.report,name:hotel.report_hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_tree
+msgid "Hotel Folio"
+msgstr "Hợp đồng"
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.hotel_folio_wizard
+#: model:ir.ui.menu,name:hotel.wizard_hotel_menu
+msgid "Hotel Folio Report"
+msgstr ""
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.hotel_management_menu
+msgid "Hotel Management"
+msgstr "Hợp đồng"
+
+#. module: hotel
+#: model:res.groups,name:hotel.group_hotel_user
+msgid "Hotel Management / User"
+msgstr ""
+
+#. module: hotel
+#: model:res.groups,name:hotel.group_hotel_manager
+msgid "Hotel Management/ Manager"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__hotel_policy
+msgid "Hotel Policy"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_hotel_room
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_tree
+msgid "Hotel Room"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_aenities_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_list
+msgid "Hotel Room Amenities"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_type_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_type_list
+msgid "Hotel Room Amenities Type"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_folio_room_line
+msgid "Hotel Room Reservation"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_tree
+msgid "Hotel Room Type"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_tree
+msgid "Hotel Services"
+msgstr "Dịch vụ"
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_hotel_services
+msgid "Hotel Services and its charges"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__hotel_policy
+msgid "Hotel policy for payment that either the guest has to payment at booking time or check-in check-out time."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__room_lines
+msgid "Hotel room reservation detail."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__service_lines
+msgid "Hotel services details provided toCustomer and it will included in the main Invoice."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__id
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__id
+#: model:ir.model.fields,field_description:hotel.field_report_hotel_report_hotel_folio__id
+msgid "ID"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "If a Hotel Folio is done, you cannot modify it manually anymore. However, you will still be able to invoice or deliver. This is used to freeze the Hotel Folio."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__message_unread
+#: model:ir.model.fields,help:hotel.field_hotel_room__message_unread
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__message_unread
+#: model:ir.model.fields,help:hotel.field_hotel_services__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Nếu đánh dấu chọn, các thông điệp mới yêu cầu sự có mặt của bạn."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__message_needaction
+#: model:ir.model.fields,help:hotel.field_hotel_room__message_needaction
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__message_needaction
+#: model:ir.model.fields,help:hotel.field_hotel_services__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu đánh dấu chọn, các thông điệp mới yêu cầu sự có mặt của bạn."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__message_has_error
+#: model:ir.model.fields,help:hotel.field_hotel_room__message_has_error
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__message_has_error
+#: model:ir.model.fields,help:hotel.field_hotel_services__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu chọn, sẽ hiển thị thông báo lỗi."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__active
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__active
+#: model:ir.model.fields,help:hotel.field_hotel_services__active
+msgid "If unchecked, it will allow you to hide the product without removing it."
+msgstr "Nếu bỏ đánh dấu, hệ thống sẽ cho phép bạn ẩn sản phẩm mà không cần xóa bỏ nó."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__picking_policy
+msgid "If you deliver all products at once, the delivery order will be scheduled based on the greatest product lead time. Otherwise, it will be based on the shortest."
+msgstr "Nếu bạn giao toàn bộ hàng trong một lần, phiếu giao hàng sẽ được lên lịch dựa trên sản phẩm cần thời gian giao hàng lâu nhất. Ngược lại, hệ thống sẽ dựa vào thời gian ngắn nhất."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__product_image
+#: model:ir.model.fields,help:hotel.field_hotel_room__image
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__image
+#: model:ir.model.fields,help:hotel.field_hotel_service_line__product_image
+#: model:ir.model.fields,help:hotel.field_hotel_services__image
+msgid "Image of the product variant (Big-sized image of product template if false). It is automatically resized as a 1024x1024px image, with aspect ratio preserved."
+msgstr "Hình ảnh của biến thể sản phẩm (Nếu không thiết lập, hệ thống sẽ sử dụng hình ảnh với kích thước lớn của sản phẩm). Nó sẽ tự động thay đổi kích thước thành 1024x10024 mà vẫn giữ nguyên tỷ lệ."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__image_medium
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__image_medium
+#: model:ir.model.fields,help:hotel.field_hotel_services__image_medium
+msgid "Image of the product variant (Medium-sized image of product template if false)."
+msgstr "Hình ảnh của biến thể sản phẩm (Nếu không thiết lập, hệ thống sẽ sử dụng hình ảnh với kích thước trung bình của sản phẩm)."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__image_small
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__image_small
+#: model:ir.model.fields,help:hotel.field_hotel_services__image_small
+msgid "Image of the product variant (Small-sized image of product template if false)."
+msgstr "Hình ảnh của biến thể sản phẩm (Nếu không thiết lập, hệ thống sẽ sử dụng hình ảnh với kích thước nhỏ của sản phẩm)."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_account_income_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_account_income_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_account_income_id
+msgid "Income Account"
+msgstr "Tài khoản doanh thu"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__incoming_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__incoming_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__incoming_qty
+msgid "Incoming"
+msgstr "Sắp về"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__incoterm
+msgid "Incoterms"
+msgstr "Điều khoản thương mại"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Information"
+msgstr "Thông tin"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__default_code
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__default_code
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__default_code
+msgid "Internal Reference"
+msgstr "Mã nội bộ"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__barcode
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__barcode
+#: model:ir.model.fields,help:hotel.field_hotel_services__barcode
+msgid "International Article Number used for product identification."
+msgstr "Mã số quốc tế được sử dụng để xác định sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__incoterm
+msgid "International Commercial Terms are a series of predefined commercial terms used in international transactions."
+msgstr "Điều khoản thương mại quốc tế là một chuỗi các điều khoản xây dựng sẵn được sử dụng trong các giao dịch thương mại quốc tế."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_stock_inventory
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_stock_inventory
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_stock_inventory
+msgid "Inventory Location"
+msgstr "Địa điểm Kiểm kê"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_valuation
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_valuation
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_valuation
+msgid "Inventory Valuation"
+msgstr "Định giá Tồn kho"
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_account_invoice
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__hotel_invoice_id
+msgid "Invoice"
+msgstr "Hóa đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__partner_invoice_id
+msgid "Invoice Address"
+msgstr "Địa chỉ xuất hoá đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__invoice_count
+msgid "Invoice Count"
+msgstr "Số lượng hoá đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__invoice_lines
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__invoice_lines
+msgid "Invoice Lines"
+msgstr "Chi tiết hóa đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__invoice_status
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__invoice_status
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__invoice_status
+msgid "Invoice Status"
+msgstr "Tình trạng hóa đơn"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__partner_invoice_id
+msgid "Invoice address for current sales order."
+msgstr "Địa chỉ xuất hoá đơn cho đơn hàng hiện tại."
+
+#. module: hotel
+#: selection:sale.advance.payment.inv,advance_payment_method:0
+msgid "Invoiceable lines"
+msgstr "Từng dòng có thể xuất Hoá đơn"
+
+#. module: hotel
+#: selection:sale.advance.payment.inv,advance_payment_method:0
+msgid "Invoiceable lines (deduct down payments)"
+msgstr "Từng dòng có thể xuất hoá đơn (trừ các khoản ứng trước)"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__qty_invoiced
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__qty_invoiced
+msgid "Invoiced Quantity"
+msgstr "SL đã xuất Hoá đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__invoice_ids
+msgid "Invoices"
+msgstr "Các hóa đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__invoice_policy
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__invoice_policy
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__invoice_policy
+msgid "Invoicing Policy"
+msgstr "Chính sách Xuất Hoá đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__iscategid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__iscategid
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__iscategid
+#: model:ir.model.fields,field_description:hotel.field_product_product__iscategid
+msgid "Is Categ"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_is_follower
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_is_follower
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_is_follower
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_is_follower
+msgid "Is Follower"
+msgstr "Trở thành người theo dõi"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__is_product_variant
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__is_product_variant
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__is_product_variant
+msgid "Is Product Variant"
+msgstr "Là biến thể sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__is_reserved
+msgid "Is Reserved"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__isroom
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__isroom
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__isroom
+#: model:ir.model.fields,field_description:hotel.field_product_product__isroom
+msgid "Is Room"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__isservice
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__isservice
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__isservice
+#: model:ir.model.fields,field_description:hotel.field_product_product__isservice
+msgid "Is Service"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__is_downpayment
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__is_downpayment
+msgid "Is a down payment"
+msgstr "Đã giảm giá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__is_expense
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__is_expense
+msgid "Is expense"
+msgstr "Là chi phí"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__is_expired
+msgid "Is expired"
+msgstr "Đã hết hạn"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__is_expense
+#: model:ir.model.fields,help:hotel.field_hotel_service_line__is_expense
+msgid "Is true if the sales order line comes from an expense or a vendor bills"
+msgstr "Đúng nếu chi tiết đơn hàng đến từ một khoản chi phí hoặc một hóa đơn nhà cung cấp"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_account_income_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_account_income_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_account_income_id
+msgid "Keep this field empty to use the default value from the product category."
+msgstr "Để trống trường này để dùng giá trị mặc định trong danh mục sản phẩm."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_account_expense_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_account_expense_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_account_expense_id
+msgid "Keep this field empty to use the default value from the product category. If anglo-saxon accounting with automated valuation method is configured, the expense account on the product category will be used."
+msgstr "Giữ trường này trống để sử dụng giá trị mặc định từ danh mục sản phẩm. Nếu kế toán anglo-saxon với phương pháp định giá tự động được định cấu hình, tài khoản chi phí trên danh mục sản phẩm sẽ được sử dụng."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard____last_update
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_room____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type____last_update
+#: model:ir.model.fields,field_description:hotel.field_hotel_services____last_update
+#: model:ir.model.fields,field_description:hotel.field_report_hotel_report_hotel_folio____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__write_uid
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__write_uid
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__write_date
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__write_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+msgid "List of customer taxes applied on the ty."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__room_amenities
+msgid "List of room amenities. "
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "List of supplier taxes if there any on the defined room."
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "List of supplier taxes related to the service provided by hotel."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__location_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__location_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__location_id
+msgid "Location"
+msgstr "Địa điểm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_main_attachment_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_main_attachment_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_main_attachment_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Đính kèm chính"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Manual Description"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_valuation
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_valuation
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_valuation
+msgid "Manual: The accounting entries to value the inventory are not posted automatically.\n"
+"        Automated: An accounting entry is automatically created to value the inventory when a product enters or leaves the company."
+msgstr "Thủ công: Các bút toán kế toán xuất nhập kho sẽ không được tạo tự động.\n"
+"        Tự động: Một bút toán kế toán sẽ được tạo tự động và vào sổ khi thực hiện hoạt động xuất nhập kho."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__service_type
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__service_type
+#: model:ir.model.fields,help:hotel.field_hotel_services__service_type
+msgid "Manually set quantities on order: Invoice based on the manually entered quantity, without creating an analytic account.\n"
+"Timesheets on contract: Invoice based on the tracked hours on the related timesheet.\n"
+"Create a task and track hours: Create a task on the sales order validation and track the work hours."
+msgstr "Đặt số lượng thứ tự theo cách thủ công: Hoá đơn dựa trên số lượng được nhập theo cách thủ công, mà không cần tạo tài khoản phân tích.\n"
+"Hợp đồng chấm công: Hóa đơn dựa trên số giờ được theo dõi trên bảng chấm công có liên quan.\n"
+"Tạo một nhiệm vụ và theo dõi giờ: Tạo một nhiệm vụ trên xác nhận đơn đặt hàng bán hàng và theo dõi giờ làm việc."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__max_adult
+msgid "Max Adult"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__max_child
+msgid "Max Child"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__image_medium
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__image_medium
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__image_medium
+msgid "Medium-sized image"
+msgstr "Hình ảnh kích thước chuẩn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_has_error
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_has_error
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_has_error
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_has_error
+msgid "Message Delivery error"
+msgstr "Thông báo gửi đi gặp lỗi"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__sale_line_warn_msg
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__sale_line_warn_msg
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__sale_line_warn_msg
+msgid "Message for Sales Order Line"
+msgstr "Thông điệp cho Dòng Đơn bán hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_ids
+msgid "Messages"
+msgstr "Thông điệp"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__qty_delivered_method
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__qty_delivered_method
+msgid "Method to update delivered qty"
+msgstr "Phương thức cập nhật số lượng đã giao"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__orderpoint_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__orderpoint_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__orderpoint_ids
+msgid "Minimum Stock Rules"
+msgstr "Quy tắc tồn kho tối thiểu"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities_type__name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__name
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__name
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Name"
+msgstr "Tên"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__signed_by
+msgid "Name of the person that signed the SO."
+msgstr "Tên của người đã được giao cho SO này."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__activity_date_deadline
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__activity_date_deadline
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__activity_date_deadline
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hạn chót lần hành động kế tiếp"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__activity_summary
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__activity_summary
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__activity_summary
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động tiếp theo"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__activity_type_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__activity_type_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__activity_type_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__activity_type_id
+msgid "Next Activity Type"
+msgstr "Kiểu hành động kế tiếp"
+
+#. module: hotel
+#: code:addons/hotel/models/hotel.py:592
+#, python-format
+msgid "Not Any Order For  %s "
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_needaction_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_needaction_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_needaction_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số lượng Hành động"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__customer_lead
+#: model:ir.model.fields,help:hotel.field_hotel_service_line__customer_lead
+msgid "Number of days between the order confirmation and the shipping of the products to the customer"
+msgstr "Số ngày kể từ khi đơn hàng được xác nhận cho đến ngày giao hàng cho khách hàng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__duration
+msgid "Number of days which will automatically count from the check-in and check-out date. "
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_has_error_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_has_error_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_has_error_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_has_error_counter
+msgid "Number of error"
+msgstr "Số lỗi"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__message_needaction_counter
+#: model:ir.model.fields,help:hotel.field_hotel_room__message_needaction_counter
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__message_needaction_counter
+#: model:ir.model.fields,help:hotel.field_hotel_services__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Số thông điệp cần có hành động"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__message_has_error_counter
+#: model:ir.model.fields,help:hotel.field_hotel_room__message_has_error_counter
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__message_has_error_counter
+#: model:ir.model.fields,help:hotel.field_hotel_services__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số tin gửi đi bị lỗi"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__message_unread_counter
+#: model:ir.model.fields,help:hotel.field_hotel_room__message_unread_counter
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__message_unread_counter
+#: model:ir.model.fields,help:hotel.field_hotel_services__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Số thông điệp chưa đọc"
+
+#. module: hotel
+#: selection:hotel.room,status:0
+msgid "Occupied"
+msgstr "Đang thuê"
+
+#. module: hotel
+#: selection:hotel.folio,hotel_policy:0
+msgid "On Booking"
+msgstr ""
+
+#. module: hotel
+#: selection:hotel.folio,hotel_policy:0
+msgid "On Check In"
+msgstr ""
+
+#. module: hotel
+#: selection:hotel.folio,hotel_policy:0
+msgid "On Checkout"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__require_payment
+msgid "Online Payment"
+msgstr "Thanh toán Online"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__require_signature
+msgid "Online Signature"
+msgstr "Ký nhận trực tuyến"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__optional_product_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__optional_product_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__optional_product_ids
+msgid "Optional Products"
+msgstr "Sản phẩm Tuỳ chọn"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__optional_product_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__optional_product_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__optional_product_ids
+msgid "Optional Products are suggested whenever the customer hits *Add to Cart* (cross-sell strategy, e.g. for computers: warranty, software, etc.)."
+msgstr "Sản phẩm tùy chọn được đề xuất bất cứ khi nào khách hàng nhấn *Thêm vào giỏ hàng* (chiến lược bán chéo, ví dụ: đối với máy tính: bảo hành, phần mềm, v.v.)."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__order_id
+msgid "Order"
+msgstr "Lệnh"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_search
+msgid "Order By Month"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__date_order
+msgid "Order Date"
+msgstr "Ngày đặt hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__order_line_id
+msgid "Order Line"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__order_line
+msgid "Order Lines"
+msgstr "Chi tiết đơn hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__order_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__order_id
+msgid "Order Reference"
+msgstr "Tham chiếu đơn hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__state
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__state
+msgid "Order Status"
+msgstr "Trạng thái Đơn hàng"
+
+#. module: hotel
+#: code:addons/hotel/models/hotel.py:629
+#: code:addons/hotel/models/hotel.py:642
+#, python-format
+msgid "Order id is not available"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_uom_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_uom_qty
+msgid "Ordered Quantity"
+msgstr "Số lượng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__invoice_policy
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__invoice_policy
+#: model:ir.model.fields,help:hotel.field_hotel_services__invoice_policy
+msgid "Ordered Quantity: Invoice quantities ordered by the customer.\n"
+"Delivered Quantity: Invoice quantities delivered to the customer."
+msgstr "Số lượng đặt hàng: Số lượng hóa đơn đặt hàng của khách hàng.\n"
+"Số lượng đã giao: Số lượng hóa đơn được giao cho khách hàng."
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Other data"
+msgstr "Thông tin khác"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__outgoing_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__outgoing_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__outgoing_qty
+msgid "Outgoing"
+msgstr "Chờ xuất đi"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_packaging
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_packaging
+msgid "Package"
+msgstr "Gói"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__partner_id
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__reference
+msgid "Payment Ref."
+msgstr "Thông tin thanh toán."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__payment_term_id
+msgid "Payment Terms"
+msgstr "Điều khoản thanh toán"
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.hotel_report_menu
+msgid "Pdf Reports"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__room_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_type__room_ids
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Phòng"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__picking_ids
+msgid "Pickings"
+msgstr "Lô hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__pos_categ_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__pos_categ_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__pos_categ_id
+msgid "Point of Sale Category"
+msgstr "Nhóm Điểm bán lẻ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__access_url
+msgid "Portal Access URL"
+msgstr "URL truy cập cổng thông tin"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__price
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__price
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__price
+msgid "Price"
+msgstr "Giá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__price_reduce
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__price_reduce
+msgid "Price Reduce"
+msgstr "Giảm Giá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__price_reduce_taxexcl
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__price_reduce_taxexcl
+msgid "Price Reduce Tax excl"
+msgstr "Giảm Giá không gồm Thuế"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__price_reduce_taxinc
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__price_reduce_taxinc
+msgid "Price Reduce Tax inc"
+msgstr "Giảm Giá gồm Thuế"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__list_price
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__list_price
+#: model:ir.model.fields,help:hotel.field_hotel_services__list_price
+msgid "Price at which the product is sold to customers."
+msgstr "Giá bán sản phẩm cho khách hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__pricelist_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__pricelist_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__pricelist_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__pricelist_id
+msgid "Pricelist"
+msgstr "Bảng giá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__pricelist_item_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__pricelist_item_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__pricelist_item_ids
+msgid "Pricelist Item"
+msgstr "Mục báo giá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__item_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__item_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__item_ids
+msgid "Pricelist Items"
+msgstr "Chi tiết bảng giá"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__pricelist_id
+msgid "Pricelist for current sales order."
+msgstr "Bảng giá cho đơn hàng hiện tại"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_wizard
+msgid "Print Folio"
+msgstr "In hợp đồng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Procurement"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__procurement_group_id
+msgid "Procurement Group"
+msgstr "Nhóm cung ứng"
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_product_product
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__product_variant_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__product_variant_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__product_variant_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__attribute_line_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__attribute_line_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__attribute_line_ids
+msgid "Product Attributes"
+msgstr "Thuộc tính sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__product_id
+msgid "Product Category"
+msgstr "Nhóm sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_image
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_image
+msgid "Product Image"
+msgstr "Ảnh sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__product_manager
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__product_manager
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__product_manager
+msgid "Product Manager"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__packaging_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__packaging_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__packaging_ids
+msgid "Product Packages"
+msgstr "Gói sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__product_tmpl_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__product_tmpl_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__product_tmpl_id
+msgid "Product Template"
+msgstr "Mẫu sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__type
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__type
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__type
+msgid "Product Type"
+msgstr "Loại sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_no_variant_attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_no_variant_attribute_value_ids
+msgid "Product attribute values that do not create variants"
+msgstr "Giá trị thuộc tính sản phẩm không tạo ra các biến thể"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__product_id
+msgid "Product_id"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_stock_production
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_stock_production
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_stock_production
+msgid "Production Location"
+msgstr "Địa điểm sản xuất"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__product_variant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__product_variant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__product_variant_ids
+msgid "Products"
+msgstr "Sản phẩm"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_res_company__additional_hours
+msgid "Provide the min hours value for                                       check in, checkout days, whatever the                                       hours will be provided here based on                                       that extra days will be calculated."
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__description_purchase
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__description_purchase
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__description_purchase
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Purchase Description"
+msgstr "Mô tả mua hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__uom_po_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__uom_po_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__uom_po_id
+msgid "Purchase Unit of Measure"
+msgstr "Đơn vị tính mua hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__qty_at_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__qty_at_date
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__qty_at_date
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__qty_available
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__qty_available
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__qty_available
+msgid "Quantity On Hand"
+msgstr "Số lượng thực tế"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__incoming_qty
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__incoming_qty
+#: model:ir.model.fields,help:hotel.field_hotel_services__incoming_qty
+msgid "Quantity of planned incoming products.\n"
+"In a context with a single Stock Location, this includes goods arriving to this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods arriving to the Stock Location of this Warehouse, or any of its children.\n"
+"Otherwise, this includes goods arriving to any Stock Location with 'internal' type."
+msgstr "Số lượng sản phẩm nhập kho theo kế hoạch. \\ NTrong bối cảnh có một địa điểm kho duy nhất, điều này bao gồm hàng hóa vào địa điểm này hoặc bất kỳ kho con nào của nó. \\ NTrong bối cảnh có một kho duy nhất, điều này bao gồm hàng hóa vào địa điểm kho của kho này hoặc bất kỳ kho con nào của nó. \\ NMặt khác, điều này bao gồm hàng hóa vào bất kỳ địa điểm kho nào với loại 'nội bộ'."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__outgoing_qty
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__outgoing_qty
+#: model:ir.model.fields,help:hotel.field_hotel_services__outgoing_qty
+msgid "Quantity of planned outgoing products.\n"
+"In a context with a single Stock Location, this includes goods leaving this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods leaving the Stock Location of this Warehouse, or any of its children.\n"
+"Otherwise, this includes goods leaving any Stock Location with 'internal' type."
+msgstr "Số lượng sản phẩm xuất kho theo kế hoạch. \\ NTrong bối cảnh có một địa điểm kho duy nhất, điều này bao gồm hàng hóa rời khỏi địa điểm này hoặc bất kỳ kho con nào của nó. \\ NTrong bối cảnh có một kho duy nhất, điều này bao gồm hàng hóa rời khỏi địa điểm kho của kho này hoặc bất kỳ kho con nào của nó. \\ NMặt khác, điều này bao gồm hàng hóa ra khỏi bất kỳ địa điểm kho nào với loại 'nội bộ'."
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Rate:"
+msgstr "Giá: "
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__expense_policy
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__expense_policy
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__expense_policy
+msgid "Re-Invoice Policy"
+msgstr "Chính sách tái lập hóa đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__code
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__code
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__code
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__origin
+msgid "Reference of the document that generated this sales order request."
+msgstr "Tham chiếu của tài liệu mà dẫn đến đơn hàng này."
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Related invoices"
+msgstr "Hóa đơn liên quan"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__remaining_validity_days
+msgid "Remaining Validity Days"
+msgstr "Số ngày còn hiệu lực"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Rent"
+msgstr "Tiền thuê"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Rent(UOM)"
+msgstr "Đơn vị"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__reordering_max_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__reordering_max_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__reordering_max_qty
+msgid "Reordering Max Qty"
+msgstr "Số lượng tái cung ứng tối đa"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__reordering_min_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__reordering_min_qty
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__reordering_min_qty
+msgid "Reordering Min Qty"
+msgstr "Số lượng tái cung ứng tối thiểu"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__nbr_reordering_rules
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__nbr_reordering_rules
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__nbr_reordering_rules
+msgid "Reordering Rules"
+msgstr "Quy tắc tái cung ứng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__require_signature
+msgid "Request a online signature to the customer in order to confirm orders automatically."
+msgstr "Yêu cầu chữ ký trực tuyến của khách hàng để xác thực đơn hàng tự động"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__require_payment
+msgid "Request an online payment to the customer in order to confirm orders automatically."
+msgstr "Yêu cầu một thanh toán trực tuyến của khách hàng dể xác thực hóa đơn tự động."
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_search
+msgid "Reserved"
+msgstr "Giữ trước"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__responsible_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__responsible_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__responsible_id
+msgid "Responsible"
+msgstr "Người phụ trách"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__activity_user_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__activity_user_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__activity_user_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__activity_user_id
+msgid "Responsible User"
+msgstr "Người chịu trách nhiệm"
+
+#. module: hotel
+#: code:addons/hotel/models/hotel.py:75
+#: code:addons/hotel/models/hotel.py:76
+#: model:ir.actions.act_window,name:hotel.action_hotel_room_form
+#: model:ir.ui.menu,name:hotel.menu_hotel_room
+#, python-format
+msgid "Room"
+msgstr "Phòng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__room_amenities
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Room Amenities"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__categ_id
+msgid "Room Category"
+msgstr "Căn"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Room Line"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__room_lines
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Room Lines"
+msgstr "Chi tiết phòng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Room Manager"
+msgstr "Quản lý phòng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Room No"
+msgstr "Số phòng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__room_line_ids
+msgid "Room Reservation Line"
+msgstr ""
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.open_hotel_room_type_form_tree
+#: model:ir.model,name:hotel.model_hotel_room_type
+msgid "Room Type"
+msgstr "Căn"
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.menu_open_hotel_room_type_form_tree
+msgid "Room Types"
+msgstr "Căn"
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_hotel_room_amenities
+msgid "Room amenities"
+msgstr ""
+
+#. module: hotel
+#: code:addons/hotel/models/hotel.py:264
+#, python-format
+msgid "Room capacity must be more than 0"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__room_id
+msgid "Room id"
+msgstr "Số phòng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Room line"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_tree
+msgid "Room rate"
+msgstr "Giá"
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.menu_open_hotel_room_form
+msgid "Rooms"
+msgstr "Phòng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__route_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__route_id
+msgid "Route"
+msgstr "Tuyến cung ứng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__route_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__route_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__route_ids
+msgid "Routes"
+msgstr "Tuyến cung ứng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__description_sale
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__description_sale
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__description_sale
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Sale Description"
+msgstr "Mô tả bán hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__lst_price
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__lst_price
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__lst_price
+msgid "Sale Price"
+msgstr "Giá bán"
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Hoá đơn thanh toán tạm ứng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__sale_line_warn
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__sale_line_warn
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__sale_line_warn
+msgid "Sales Order Line"
+msgstr "Chi tiết Đơn Bán"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__list_price
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__list_price
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__list_price
+msgid "Sales Price"
+msgstr "Giá bán"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__team_id
+msgid "Sales Team"
+msgstr "Đội ngũ bán hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__user_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__salesman_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__salesman_id
+msgid "Salesperson"
+msgstr "Nhân viên kinh doanh"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__access_token
+msgid "Security Token"
+msgstr "Mã bảo mật"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__sale_line_warn
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__sale_line_warn
+#: model:ir.model.fields,help:hotel.field_hotel_services__sale_line_warn
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "Chọn \"Cảnh báo\" sẽ thông báo cho người qua 1 tin nhắn, Chọn \"Thông báo chặn\" sẽ đưa ra một thông báo và khóa lại việc xử lý tiếp. Nội dung tin nhắn thông báo bạn có thể điền ở trường kế tiếp."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_floor__sequence
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__sequence
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__sequence
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__sequence
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__sequence
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__sequence
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__service_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__categ_id
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_tree
+msgid "Service Category"
+msgstr "Loại dịch vụ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__service_line_id
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Service Line"
+msgstr "Danh sách phí"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__service_lines
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Service Lines"
+msgstr "Danh sách phí"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Service Manager"
+msgstr "Quản lý dịch vụ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_type__name
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_service_type_form
+msgid "Service Name"
+msgstr "Tên dịch vụ"
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.open_hotel_service_type_form_tree
+#: model:ir.model,name:hotel.model_hotel_service_type
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_service_type_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_service_type_tree
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Service Type"
+msgstr "Loại dịch vụ"
+
+#. module: hotel
+#: model:ir.ui.menu,name:hotel.menu_open_hotel_service_type_form_tree
+msgid "Service Types"
+msgstr "Loại dịch vụ"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_search
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_tree
+msgid "Service rate"
+msgstr "Giá dịch vụ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__product_id
+msgid "Service_id"
+msgstr ""
+
+#. module: hotel
+#: model:ir.actions.act_window,name:hotel.action_hotel_services_form
+#: model:ir.ui.menu,name:hotel.menu_hotel_service
+#: model:ir.ui.menu,name:hotel.menu_open_hotel_services_form
+msgid "Services"
+msgstr "Dịch vụ"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Set to Done"
+msgstr "Hoàn thành"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Set to Draft"
+msgstr "Thiết lập về nháp"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__picking_policy
+msgid "Shipping Policy"
+msgstr "Chính sách giao hàng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__signature
+msgid "Signature"
+msgstr "Chữ ký"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__signature
+msgid "Signature received through the portal."
+msgstr "Chữ ký nhận được qua cổng thông tin"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__signed_by
+msgid "Signed by"
+msgstr "Ký bởi"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__image_small
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__image_small
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__image_small
+msgid "Small-sized image"
+msgstr "Ảnh cỡ nhỏ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__sales_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__sales_count
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__sales_count
+msgid "Sold"
+msgstr "Đã bán"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__origin
+msgid "Source Document"
+msgstr "Tài liệu gốc"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_cost_method
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_cost_method
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_cost_method
+msgid "Standard Price: The products are valued at their standard cost defined on the product.\n"
+"        Average Cost (AVCO): The products are valued at weighted average cost.\n"
+"        First In First Out (FIFO): The products are valued supposing those that enter the company first will also leave it first."
+msgstr "Giá tiêu chuẩn: Sản phẩm được định giá theo giá tiêu chuẩn khai báo trên form sản phẩm.\n"
+"        Giá Trung bình (AVCO): Sản phẩm được định giá theo phương pháp bình quân.\n"
+"        Nhập trước Xuất trước (FIFO): Sản phẩm được định giá theo phương pháp thực tế với giả định nhập trước xuất trước. Khi kết hợp với sô Lô/Serial thì sẽ thành Thực tế Đích danh."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_report_wizard__date_start
+msgid "Start Date"
+msgstr "Ngày bắt đầu"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "States"
+msgstr "Trạng thái"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__state
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__status
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__activity_state
+#: model:ir.model.fields,help:hotel.field_hotel_room__activity_state
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__activity_state
+#: model:ir.model.fields,help:hotel.field_hotel_services__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Trạng thái dựa trên hoạt động\n"
+"Quá hạn: Ngày đến hạn phải được chuyển\n"
+"Hôm nay: Hôm nay là ngày phải thực hiện\n"
+"Kế hoạch: Các hoạt động trong tương lai."
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Status:"
+msgstr "Trạng thái: "
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__stock_fifo_manual_move_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__stock_fifo_manual_move_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__stock_fifo_manual_move_ids
+msgid "Stock Fifo Manual Move"
+msgstr "Dịch chuyển thủ công FIFO Stock"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__stock_fifo_real_time_aml_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__stock_fifo_real_time_aml_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__stock_fifo_real_time_aml_ids
+msgid "Stock Fifo Real Time Aml"
+msgstr "Stock FIFO thời gian thực"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_stock_account_input
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_stock_account_input
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_stock_account_input
+msgid "Stock Input Account"
+msgstr "Tài khoản nhập kho"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__stock_move_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__stock_move_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__stock_move_ids
+msgid "Stock Move"
+msgstr "Hoạt động kho"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__move_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__move_ids
+msgid "Stock Moves"
+msgstr "Dịch chuyển kho"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__property_stock_account_output
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__property_stock_account_output
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__property_stock_account_output
+msgid "Stock Output Account"
+msgstr "Tài khoản xuất kho"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__stock_quant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__stock_quant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__stock_quant_ids
+msgid "Stock Quant"
+msgstr "Số lượng tồn kho"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__stock_value_currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__stock_value_currency_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__stock_value_currency_id
+msgid "Stock Value Currency"
+msgstr "Tiền tệ giá trị tồn kho"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__price_subtotal
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__price_subtotal
+msgid "Subtotal"
+msgstr "Thành tiền"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Suplliers"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_services_form
+msgid "Supplier Taxes"
+msgstr "Thuế đầu vào"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_form
+msgid "Suppliers"
+msgstr "Nhà cung cấp"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_search
+msgid "Tables Detail"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__amount_by_group
+msgid "Tax amount by group"
+msgstr "Số tiền thuế theo nhóm"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__amount_tax
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__tax_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__tax_id
+msgid "Taxes"
+msgstr "Thuế"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_archived_variant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_existing_variant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_product_attribute_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_product_attribute_value_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_product_attribute_value_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_product_attribute_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_product_template_attribute_line_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__valid_product_template_attribute_line_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_archived_variant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_existing_variant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_product_attribute_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_product_attribute_value_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_product_attribute_value_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_product_attribute_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_product_template_attribute_line_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__valid_product_template_attribute_line_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_archived_variant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_existing_variant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_product_attribute_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_product_attribute_value_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_product_attribute_value_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_product_attribute_wnva_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_product_template_attribute_line_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__valid_product_template_attribute_line_wnva_ids
+msgid "Technical compute"
+msgstr "Tính toán kỹ thuật"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__display_type
+#: model:ir.model.fields,help:hotel.field_hotel_service_line__display_type
+msgid "Technical field for UX purpose."
+msgstr "Trường kỹ thuật cho mục đích UX."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__pricelist_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__pricelist_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__pricelist_id
+msgid "Technical field. Used for searching on pricelists, not stored in database."
+msgstr "Trường kỹ thuật. Được sử dụng để tìm kiếm trên bảng giá, không được lưu trữ trong cơ sở dữ liệu."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__stock_move_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__stock_quant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__stock_move_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__stock_quant_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__stock_move_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__stock_quant_ids
+msgid "Technical: used to compute quantities."
+msgstr "Kỹ thuật: được sử dụng để tính toán số lượng."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__product_template_attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__product_template_attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__product_template_attribute_value_ids
+msgid "Template Attribute Values"
+msgstr "Giá trị thuộc tính mẫu"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__note
+msgid "Terms and conditions"
+msgstr "Điều khoản và Điều kiện"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__analytic_account_id
+msgid "The analytic account related to a sales order."
+msgstr "Tài khoản quản trị liên quan tới một đơn hàng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__reference
+msgid "The payment communication of this sale order."
+msgstr "Các giao tiếp thanh toán của lệnh bán này."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__currency_rate
+msgid "The rate of the currency to the currency of rate 1 applicable at the date of the order"
+msgstr "Tỷ giá tiền tệ so với tiền tệ của tỷ lệ 1 áp dụng tại ngày đặt hàng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__lst_price
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__lst_price
+#: model:ir.model.fields,help:hotel.field_hotel_services__lst_price
+msgid "The sale price is managed from the product template. Click on the 'Configure Variants' button to set the extra attribute prices."
+msgstr "Giá bán được quản lý từ mẫu sản phẩm. Nhấp vào 'Cấu hìnhNút 'Biến thể' để đặt giá thuộc tính bổ sung."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__volume
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__volume
+#: model:ir.model.fields,help:hotel.field_hotel_services__volume
+msgid "The volume in m3."
+msgstr "Thể tích tính theo m3."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__image_variant
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__image_variant
+#: model:ir.model.fields,help:hotel.field_hotel_services__image_variant
+msgid "This field holds the image used as image for the product variant, limited to 1024x1024px."
+msgstr "Trường này chứa hình ảnh được sử dụng làm hình cho biến thể sản phẩm, kích thước bị giới hạn đến 1024x1024px."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__commitment_date
+msgid "This is the delivery date promised to the customer. If set, the delivery order will be scheduled based on this date rather than product lead times."
+msgstr "Đây là ngày giao hàng đã hứa với khách hàng. Nếu được đặt, lệnh giao hàng sẽ được lên lịch dựa trên ngày này thay vì thời gian dẫn sản phẩm."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__price_extra
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__price_extra
+#: model:ir.model.fields,help:hotel.field_hotel_services__price_extra
+msgid "This is the sum of the extra price of all attributes"
+msgstr "Đây là tổng giá cộng thêm của tất cả các thuộc tính"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_stock_production
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_stock_production
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_stock_production
+msgid "This stock location will be used, instead of the default one, as the source location for stock moves generated by manufacturing orders."
+msgstr "Địa điểm kho này sẽ được sử dụng, thay cho địa điểm mặc định, như là địa điểm nguồn cho các dịch chuyển kho được tạo bởi lệnh sản xuất."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_stock_inventory
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_stock_inventory
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_stock_inventory
+msgid "This stock location will be used, instead of the default one, as the source location for stock moves generated when you do an inventory."
+msgstr "Thay cho địa điểm mặc định, địa điểm kho này sẽ được sử dụng như là địa điểm nguồn của các dịch chuyển kho được tạo ra khi bạn thực hiện một kiểm kê (kiểm kho)."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__responsible_id
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__responsible_id
+#: model:ir.model.fields,help:hotel.field_hotel_services__responsible_id
+msgid "This user will be responsible of the next activities related to logistic operations for this product."
+msgstr "Người dùng này sẽ có trách nhiệm thực hiện hoạt động tiếp theo liên quan đến hoạt động kho vận của sản phẩm này."
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "Thông tin phòng"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__ser_checkout_date
+msgid "To Date"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__qty_to_invoice
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__qty_to_invoice
+msgid "To Invoice Quantity"
+msgstr "Số lượng cần xuất hóa đơn"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__to_weight
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__to_weight
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__to_weight
+msgid "To Weigh With Scale"
+msgstr "Cân với tỷ lệ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__amount_total
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__price_total
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__price_total
+msgid "Total"
+msgstr "Tổng"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.report_hotel_folio
+msgid "Total Collection"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__price_tax
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__price_tax
+msgid "Total Tax"
+msgstr "Tổng thuế"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_tree
+msgid "Total amount"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__service_type
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__service_type
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__service_type
+msgid "Track Service"
+msgstr "Kiểm soát dịch vụ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__tracking
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__tracking
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__tracking
+msgid "Tracking"
+msgstr "Theo vết"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__transaction_ids
+msgid "Transactions"
+msgstr "Giao dịch"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__is_reserved
+msgid "True when folio line created from                                  Reservation"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__type_name
+msgid "Type Name"
+msgstr "Tên loại"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__price_unit
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__price_unit
+msgid "Unit Price"
+msgstr "Đơn giá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_uom
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__uom_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__uom_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_uom
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__uom_id
+msgid "Unit of Measure"
+msgstr "Đơn vị tính"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__uom_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__uom_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__uom_name
+msgid "Unit of Measure Name"
+msgstr "Tên đơn vị tính"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_unread
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_unread
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_unread
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_unread
+msgid "Unread Messages"
+msgstr "Tin chưa đọc"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__message_unread_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__message_unread_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__message_unread_counter
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Bộ đếm Thông điệp chưa đọc"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Tổng chưa thuế"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__untaxed_amount_to_invoice
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__untaxed_amount_to_invoice
+msgid "Untaxed Amount To Invoice"
+msgstr "Số tiền cần lên hóa đơn chưa thuế"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__untaxed_amount_invoiced
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__untaxed_amount_invoiced
+msgid "Untaxed Invoiced Amount"
+msgstr "Giá trị hóa đơn chưa thuế"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_folio_form
+msgid "Untaxed amount"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio_line__product_custom_attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_service_line__product_custom_attribute_value_ids
+msgid "User entered custom product attribute values"
+msgstr "Người dùng nhập giá trị thuộc tính sản phẩm tùy chỉnh"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_archived_variant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_archived_variant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_archived_variant_ids
+msgid "Valid Archived Variants"
+msgstr "Các biến thể lưu trữ hợp lệ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_existing_variant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_existing_variant_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_existing_variant_ids
+msgid "Valid Existing Variants"
+msgstr "Biến thể tồn tại hợp lệ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_product_template_attribute_line_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_product_template_attribute_line_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_product_template_attribute_line_ids
+msgid "Valid Product Attribute Lines"
+msgstr "Chi tiết thuộc tính sản phẩm hợp lệ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_product_template_attribute_line_wnva_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_product_template_attribute_line_wnva_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_product_template_attribute_line_wnva_ids
+msgid "Valid Product Attribute Lines Without No Variant Attributes"
+msgstr "Chi tiết thuộc tính sản phẩm hợp lệ mà không có thuộc tính biến thể"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_product_attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_product_attribute_value_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_product_attribute_value_ids
+msgid "Valid Product Attribute Values"
+msgstr "Giá trị thuộc tính sản phẩm hợp lệ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_product_attribute_value_wnva_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_product_attribute_value_wnva_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_product_attribute_value_wnva_ids
+msgid "Valid Product Attribute Values Without No Variant Attributes"
+msgstr "Giá trị thuộc tính sản phẩm hợp lệ mà không có thuộc tính biến thể"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_product_attribute_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_product_attribute_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_product_attribute_ids
+msgid "Valid Product Attributes"
+msgstr "Thuộc tính sản phẩm hợp lệ"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valid_product_attribute_wnva_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valid_product_attribute_wnva_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valid_product_attribute_wnva_ids
+msgid "Valid Product Attributes Without No Variant Attributes"
+msgstr "Thuộc tính sản phẩm hợp lệ mà không có thuộc tính biến thể"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__validity_date
+msgid "Validity"
+msgstr "Ngày xác nhận"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__validity_date
+msgid "Validity date of the quotation, after this date, the customer won't be able to validate the quotation online."
+msgstr "Ngày hiệu lực của báo giá, sau ngày này, khách hàng sẽ không thể xác nhận báo giá trực tuyến."
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__valuation
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__valuation
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__valuation
+msgid "Valuation"
+msgstr "Định giá"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__stock_value
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__stock_value
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__stock_value
+msgid "Value"
+msgstr "Giá trị"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__image_variant
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__image_variant
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__image_variant
+msgid "Variant Image"
+msgstr "Hình ảnh biến thể"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__price_extra
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__price_extra
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__price_extra
+msgid "Variant Price Extra"
+msgstr "Giá cộng thêm cho biến thể"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__variant_seller_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__variant_seller_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__variant_seller_ids
+msgid "Variant Seller"
+msgstr "Người bán biến thể"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__supplier_taxes_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__supplier_taxes_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__supplier_taxes_id
+msgid "Vendor Taxes"
+msgstr "Thuế NCC"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__seller_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__seller_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__seller_ids
+msgid "Vendors"
+msgstr "Nhà cung cấp"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__volume
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__volume
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__volume
+msgid "Volume"
+msgstr "Thể tích"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__warehouse_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__warehouse_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__warehouse_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__warehouse_id
+msgid "Warehouse"
+msgstr "Kho"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_folio__website_message_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__website_message_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__website_message_ids
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__website_message_ids
+msgid "Website Messages"
+msgstr "Thông điệp Website"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__website_message_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room__website_message_ids
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__website_message_ids
+#: model:ir.model.fields,help:hotel.field_hotel_services__website_message_ids
+msgid "Website communication history"
+msgstr "Lịch sử thông tin liên lạc website"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__weight
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__weight
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__weight
+msgid "Weight"
+msgstr "Khối lượng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__weight_uom_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__weight_uom_id
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__weight_uom_id
+msgid "Weight Unit of Measure"
+msgstr "Đơn vị đo khối lượng"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__weight
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__weight
+#: model:ir.model.fields,help:hotel.field_hotel_services__weight
+msgid "Weight of the product, packaging not included. The unit of measure can be changed in the general settings"
+msgstr "Trọng lượng của sản phẩm, không bao gồm bao bì. Đơn vị đo có thể đã thay đổi trong cài đặt chung"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_hotel_room__weight_uom_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_room_amenities__weight_uom_name
+#: model:ir.model.fields,field_description:hotel.field_hotel_services__weight_uom_name
+msgid "Weight unit of measure label"
+msgstr "Tên thang đo trọng lượng"
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_sale_advance_payment_inv__advance_payment_method
+msgid "What do you want to invoice?"
+msgstr "Bạn muốn xuất hoá đơn cho cái gì?"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_stock_account_input
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_stock_account_input
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_stock_account_input
+msgid "When doing real-time inventory valuation, counterpart journal items for all incoming stock moves will be posted in this account, unless there is a specific valuation account set on the source location. When not set on the product, the one from the product category is used."
+msgstr "Khi thực hiện định giá tồn kho theo thời gian thực, phát sinh đối ứng cho tất cả các dịch chuyển nhập kho sẽ được ghi nhận vào hệ thống tài khoản, trừ khi có một tài khoản định giá được thiết lập trên địa điểm nguồn. Khi không thiết lập trên sản phẩm, hệ thống sẽ sử dụng thiết lập trên nhóm sản phẩm.\n"
+"Tips: Giá trị sẽ được ghi vào bên Có của tài khoản này."
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_room__property_stock_account_output
+#: model:ir.model.fields,help:hotel.field_hotel_room_amenities__property_stock_account_output
+#: model:ir.model.fields,help:hotel.field_hotel_services__property_stock_account_output
+msgid "When doing real-time inventory valuation, counterpart journal items for all outgoing stock moves will be posted in this account, unless there is a specific valuation account set on the destination location. When not set on the product, the one from the product category is used."
+msgstr "Khi thực hiện định giá tồn kho theo thời gian thực, phát sinh đối ứng cho tất cả các dịch chuyển nhập kho sẽ được ghi nhận vào hệ thống tài khoản, trừ khi có một tài khoản định giá được thiết lập trên địa điểm đích. Khi không thiết lập trên một sản phẩm, hệ thống sẽ sử dụng thiết lập trên nhóm sản phẩm.\n"
+"Tips: Giá trị sẽ được ghi vào bên Nợ của tài khoản này."
+
+#. module: hotel
+#: code:addons/hotel/models/hotel.py:428
+#, python-format
+msgid "You Cannot Take Same Room Twice"
+msgstr "Không thể nhận hai phòng giống nhau!"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_folio_room_line__partner_id
+#: model:ir.model.fields,help:hotel.field_hotel_folio__partner_id
+#: model:ir.model.fields,help:hotel.field_hotel_folio_line__order_partner_id
+#: model:ir.model.fields,help:hotel.field_hotel_service_line__order_partner_id
+msgid "You can find a customer by its Name, TIN, Email or Internal Reference."
+msgstr "Bạn có thể tìm khách hàng theo tên, MST, Email hoặc mã nội bộ."
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_hotel_room_amenities_type
+msgid "amenities Type"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_hotel_service_line
+msgid "hotel Service line"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_hotel_folio
+msgid "hotel folio new"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model,name:hotel.model_hotel_folio_line
+msgid "hotel folio1 room line"
+msgstr ""
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "occupied"
+msgstr "Đang thuê"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_kanban
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_type_form
+msgid "room_image"
+msgstr ""
+
+#. module: hotel
+#: model:ir.model.fields,field_description:hotel.field_folio_room_line__status
+msgid "state"
+msgstr "Trạng thái HĐ"
+
+#. module: hotel
+#: model:ir.model.fields,help:hotel.field_hotel_folio__amount_by_group
+msgid "type: [(name, amount, base, formated amount, formated base)]"
+msgstr "loại: [(tên, tổng, cơ sở, tổng đã chỉnh, cơ sở đã chỉnh)]"
+
+#. module: hotel
+#: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_search
+msgid "Đang thuê"
+msgstr ""
+
