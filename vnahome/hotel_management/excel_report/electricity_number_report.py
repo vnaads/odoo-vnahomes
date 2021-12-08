@@ -21,6 +21,19 @@ class vna_electricity_number_report(models.TransientModel):
                                            'room_type_id', string='Hotel room type')
     company_id = fields.Many2one('res.company', string='Công ty', default=lambda self: self.env.user.company_id)
 
+    def get_company_ids(self):
+        company = self.env.user.company_id
+        res = [company.id]
+        query = "SELECT id FROM res_company WHERE parent_id = %s" % company.id
+        self._cr.execute(query)
+        for r in self._cr.dictfetchall():
+            res.append(r['id'])
+        return res
+
+    def get_company_ids_str(self):
+        company_ids = self.get_company_ids()
+        return ','.join(str(id) for id in company_ids)
+
     def action_print(self):
         self.ensure_one()
         date_from = self.from_date.strftime('%d-%m-%Y')
@@ -30,7 +43,7 @@ class vna_electricity_number_report(models.TransientModel):
             'start_date': self.from_date,
             'end_date': self.to_date,
             'hotel_room_type_ids': '0',
-            'company_id': self.company_id.id if self.company_id else '0'
+            'company_ids': self.get_company_ids_str()
         }
         if self.hotel_room_type_ids:
             hotel_room_type_ids = ', '.join([str(a.id) for a in self.hotel_room_type_ids])
@@ -342,6 +355,7 @@ class vna_electricity_number_report(models.TransientModel):
             WHERE (ai.date >= cast('{start_date}' as date) AND ai.date <= cast('{end_date}' as date)) 
             AND invoice_product.is_electric_type = 't'
             and case when '{hotel_room_type_ids}' != '0' then hrt.id in ({hotel_room_type_ids}) else 1=1 end
+            and ai.company_id in ({company_ids})
             ORDER BY hrt.name, pt.name) as result
         GROUP BY can, phong
         ORDER BY can, phong

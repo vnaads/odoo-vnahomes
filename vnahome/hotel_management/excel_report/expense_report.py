@@ -32,6 +32,19 @@ class vna_expense_report(models.TransientModel):
                 raise ValidationError(
                     _("You cannot export data over 1 year, please input date in year %s") % (r.from_date.year))
 
+    def get_company_ids(self):
+        company = self.env.user.company_id
+        res = [company.id]
+        query = "SELECT id FROM res_company WHERE parent_id = %s" % company.id
+        self._cr.execute(query)
+        for r in self._cr.dictfetchall():
+            res.append(r['id'])
+        return res
+
+    def get_company_ids_str(self):
+        company_ids = self.get_company_ids()
+        return ','.join(str(id) for id in company_ids)
+
     def action_print(self):
         self.ensure_one()
         date_from = self.from_date.strftime('%d-%m-%Y')
@@ -41,7 +54,7 @@ class vna_expense_report(models.TransientModel):
             'start_date': self.from_date,
             'end_date': self.to_date,
             'hotel_room_type_ids': '0',
-            'company_id': self.company_id.id if self.company_id else '0'
+            'company_ids': self.get_company_ids_str()
         }
         if self.hotel_room_type_ids:
             hotel_room_type_ids = ', '.join([str(a.id) for a in self.hotel_room_type_ids])
@@ -351,6 +364,7 @@ class vna_expense_report(models.TransientModel):
             LEFT JOIN product_template pt2 ON pp2.product_tmpl_id = pt2.id
             WHERE (aml.date >= cast('{start_date}' as date) AND aml.date <= cast('{end_date}' as date)) 
             and case when '{hotel_room_type_ids}' != '0' then hrt.id in ({hotel_room_type_ids}) else 1=1 end
+            and aml.company_id in ({company_ids})
             GROUP BY hrt.name, pt.name, aal.name, aal.date, hr.id, pp.id, pt2.name
             ORDER BY hrt.name, pt2.name, pt.name) as result
         GROUP BY can, phong, chi_phi
