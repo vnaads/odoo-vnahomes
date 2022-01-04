@@ -177,4 +177,16 @@
     <menuitem action="vna_action_import_electricity_invoice" id="menu_vna_action_import_electricity_invoice"
               parent="account.menu_finance_receivables" sequence="15"
               name="Nhập số điện cho hóa đơn"/>
+
+<!--    partner form-->
+    <record id="vna_view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">vna_view_partner_form_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="identity_card_number"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

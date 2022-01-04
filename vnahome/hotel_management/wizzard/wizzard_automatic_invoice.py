@@ -19,7 +19,7 @@ class WizardAutomaticInvoice(models.TransientModel):
             if not r.folio_id:
                 folio_obj = self.env['hotel.folio'].search([('state', '=', 'sale')])
                 for folio in folio_obj:
-                    if folio.room_lines[0].filtered(lambda x: x.checkin_date <= r.invoice_date and x.checkout_date >= r.invoice_date):
+                    if folio.room_lines[0].filtered(lambda x: x.checkin_date.date() <= r.invoice_date and x.checkout_date.date() >= r.invoice_date):
                         invoice_of_folio = self.env['account.invoice'].search([('folio_id', '=', folio.id)]).filtered(
                             lambda x: x.date and x.date.month == r.invoice_date.month and x.date.year == r.invoice_date.year)
                         if invoice_of_folio:
@@ -36,7 +36,7 @@ class WizardAutomaticInvoice(models.TransientModel):
                             folio.room_lines[0].checkin_date.strftime('%d/%m/%Y'),
                             folio.room_lines[0].checkout_date.strftime('%d/%m/%Y')))
             else:
-                if r.folio_id.room_lines[0].filtered(lambda x: x.checkin_date <= r.invoice_date and x.checkout_date >= r.invoice_date):
+                if r.folio_id.room_lines[0].filtered(lambda x: x.checkin_date.date() <= r.invoice_date and x.checkout_date.date() >= r.invoice_date):
                     invoice_of_folio = self.env['account.invoice'].search([('folio_id', '=', r.folio_id.id)]).filtered(
                         lambda x: x.date and x.date.month == r.invoice_date.month and x.date.year == r.invoice_date.year)
                     if invoice_of_folio:

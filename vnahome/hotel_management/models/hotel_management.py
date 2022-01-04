@@ -5,12 +5,21 @@ from odoo.exceptions import UserError, ValidationError
 from odoo.osv import expression
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from odoo import api, fields, models, _
+from odoo.addons import decimal_precision as dp
 
 
-class VNAHotelRoomType(models.Model):
+class VNAHotelRoomTypeInherit(models.Model):
     _inherit = 'hotel.room.type'
 
     company_id = fields.Many2one('res.company', string='Công ty', default=lambda self: self.env.user.company_id)
+    active = fields.Boolean(default=True, string='Active')
+
+    @api.onchange('active')
+    def onchange_active(self):
+        for r in self:
+            if r.active:
+                for room in r.room_ids:
+                    room.active = r.active
 
 
 class VNAHotelRoom(models.Model):
@@ -20,6 +29,12 @@ class VNAHotelRoom(models.Model):
     folio_ids = fields.One2many('hotel.folio', 'room_id', string="Folio")
     folio_count = fields.Integer(string="Hợp đồng", compute='calculate_folio', store=True)
     company_id = fields.Many2one('res.company', string='Công ty', default=lambda self: self.env.user.company_id)
+    active = fields.Boolean(default=True, string='Active')
+    room_status = fields.Selection([
+        ('no_ready', 'Chưa sẵn sàng'),
+        ('ready', 'Đã sẵn sàng'),
+    ], string="Tình trạng phòng", default="ready")
+    weekend_price = fields.Float('Weekend Price', digits=dp.get_precision('Product Price'), default=0.0)
 
     @api.multi
     @api.depends('folio_ids')
@@ -154,12 +169,13 @@ class VNAHotelFolio(models.Model):
     folio_invoice_ids = fields.One2many('account.invoice', 'folio_id', string='Invoice', copy=False)
     readonly_field = fields.Boolean(string='Readonly field', default=False)
     expired_date = fields.Integer(string=_('Expired Date'), compute='get_expired_date', store=True)
-    room_checkin_date = fields.Date(string="Checkin Date", compute='get_check_date', store=True)
-    room_checkout_date = fields.Date(string="Checkout Date", compute='get_check_date', store=True)
+    room_checkin_date = fields.Datetime(string="Checkin Date", compute='get_check_date', store=True)
+    room_checkout_date = fields.Datetime(string="Checkout Date", compute='get_check_date', store=True)
     room_id = fields.Many2one('hotel.room', string=_('Room'), compute='compute_room_id', store=True)
     start_electricity_number = fields.Float(string=_('Số điện bắt đầu'), digits=0, required=True, default=0)
     folio_payment_ids = fields.One2many('account.payment', 'folio_id', string='Payment', copy=False)
     company_id = fields.Many2one('res.company', string='Công ty', default=lambda self: self.env.user.company_id)
+    hotel_contract_type_id = fields.Many2one('hotel.contract.type', string='Loại hợp đồng')
 
     @api.multi
     @api.depends('room_lines.room_id')
@@ -181,7 +197,7 @@ class VNAHotelFolio(models.Model):
     def get_expired_date(self):
         for r in self:
             if r.room_lines:
-                r.expired_date = (r.room_lines[0].checkout_date - datetime.now().date()).days
+                r.expired_date = (r.room_lines[0].checkout_date - datetime.now()).days
 
     @api.multi
     def action_cancel(self):
@@ -422,15 +438,29 @@ class VNAHotelFolio(models.Model):
 class VNAHotelFolioLine(models.Model):
     _inherit = 'hotel.folio.line'
 
-    checkin_date = fields.Date('Check In Date', required=True, default=datetime.now().date())
-    checkout_date = fields.Date('Check Out Date', required=True, default=datetime.now().date())
+    checkin_date = fields.Datetime('Check In Date', required=True, default=datetime.now())
+    checkout_date = fields.Datetime('Check Out Date', required=True, default=datetime.now())
     month_of_rent = fields.Integer(string=_('Month of rent'), default=1)
     room_id = fields.Many2one('hotel.room')
+    check_in_status = fields.Selection([
+        ('no_check_in', 'Chưa nhận phòng'),
+        ('check_in', 'Đã nhận phòng'),
+    ], string="Khách nhận phòng", default="no_check_in")
+    weekend_price_flag = fields.Boolean(string='Giá cuối tuần')
+
+    @api.multi
+    @api.onchange('weekend_price_flag')
+    def onchange_room_id(self):
+        for r in self:
+            if r.weekend_price_flag and r.room_id:
+                r.price_unit = r.room_id.weekend_price
 
     @api.multi
     @api.onchange('room_id')
     def onchange_room_id(self):
         for r in self:
+            if r.room_id.room_status == 'no_ready':
+                raise UserError(_('Phòng chưa sẵn sàng đón khách!'))
             context = dict(r._context)
             if not context:
                 context = {}
@@ -485,15 +515,15 @@ class VNAHotelFolioLine(models.Model):
                 assigned = False
                 for rm_line in room.room_line_ids:
                     if rm_line.status != 'cancel' and rm_line.status != 'done':
-                        if (r.checkin_date <= rm_line.check_in.date() <=
+                        if (r.checkin_date <= rm_line.check_in <=
                             r.checkout_date) or (r.checkin_date <=
-                                                 rm_line.check_out.date() <=
+                                                 rm_line.check_out <=
                                                  r.checkout_date):
                             assigned = True
-                        elif (rm_line.check_in.date() <= r.checkin_date <=
-                              rm_line.check_out.date()) or (rm_line.check_in.date() <=
+                        elif (rm_line.check_in <= r.checkin_date <=
+                              rm_line.check_out) or (rm_line.check_in <=
                                                             r.checkout_date <=
-                                                            rm_line.check_out.date()):
+                                                            rm_line.check_out):
                             assigned = True
                 if room.status != 'occupied':
                     avail_prod_ids.append(room.product_id.id)

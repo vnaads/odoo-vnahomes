@@ -10,7 +10,9 @@
     'summary': 'Hotel Management to Manage Folio and Hotel Configuration',
     'demo': ['data/hotel_data.xml'],
     'data': [
+            'security/ir.model.access.csv',
             'security/hotel_management_security.xml',
+            'views/hotel_contract_type_view.xml',
             'views/hotel_management_views.xml',
             'views/account_invoice_view.xml',
             'views/account_payment_view.xml',
