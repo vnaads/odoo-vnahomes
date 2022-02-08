@@ -359,7 +359,7 @@
                                             colspan="2" align="center">
                                             <span>Hóa đơn Dịch vụ tháng</span>&amp;nbsp;
                                             <t t-if="o.date_invoice">
-                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m')"/>
+                                                <span t-esc="(o.date_invoice).strftime('%m')"/>
                                             </t>
                                         </td>
                                     </tr>

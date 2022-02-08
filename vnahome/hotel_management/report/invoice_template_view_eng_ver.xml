@@ -48,7 +48,7 @@
 <!--                                            colspan="2" align="center">-->
 <!--                                            <span>House Rent Receipt</span>&amp;nbsp;-->
 <!--                                            <t t-if="o.date_invoice">-->
-<!--                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>-->
+<!--                                                <span t-esc="(o.date_invoice).strftime('%m.%Y')"/>-->
 <!--                                            </t>-->
 <!--                                        </td>-->
 <!--                                    </tr>-->
@@ -61,7 +61,7 @@
 <!--                                        <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif; "-->
 <!--                                            align="center">-->
 <!--                                            <t t-if="o.date_invoice">-->
-<!--                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>-->
+<!--                                                <span t-esc="(o.date_invoice).strftime('%m.%Y')"/>-->
 <!--                                            </t>-->
 <!--                                        </td>-->
 <!--                                    </tr>-->
@@ -359,7 +359,7 @@
                                             colspan="2" align="center">
                                             <span>House Rent Receipt</span>&amp;nbsp;
                                             <t t-if="o.date_invoice">
-                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>
+                                                <span t-esc="(o.date_invoice).strftime('%m.%Y')"/>
                                             </t>
                                         </td>
                                     </tr>
@@ -371,7 +371,7 @@
                                         <td style="width: 40%; border:1px solid black; border-collapse: collapse; font-size: 16px; font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;"
                                             valign="middle" align="center">
                                             <t t-if="o.date_invoice">
-                                                <span t-esc="(o.date_invoice + relativedelta(months=1)).strftime('%m.%Y')"/>
+                                                <span t-esc="(o.date_invoice).strftime('%m.%Y')"/>
                                             </t>
                                         </td>
                                     </tr>
